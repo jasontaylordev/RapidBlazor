@@ -1,5 +1,4 @@
-﻿using CleanArchitectureBlazor.WebUI.Shared;
-using MediatR;
+﻿using CleanArchitectureBlazor.WebUI.Shared.WeatherForecasts;
 using Microsoft.Extensions.Logging;
 
 namespace CleanArchitectureBlazor.Application.WeatherForecasts.Queries;

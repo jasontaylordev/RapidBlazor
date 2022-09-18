@@ -1,5 +1,5 @@
 using CleanArchitectureBlazor.Application.WeatherForecasts.Queries;
-using CleanArchitectureBlazor.WebUI.Shared;
+using CleanArchitectureBlazor.WebUI.Shared.WeatherForecasts;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

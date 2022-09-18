@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitectureBlazor.WebUI.Server.Controllers;
 
+[ApiExplorerSettings(IgnoreApi = true)]
 public class OidcConfigurationController : Controller
 {
     private readonly ILogger<OidcConfigurationController> _logger;

@@ -1,4 +1,4 @@
-namespace CleanArchitectureBlazor.WebUI.Shared;
+namespace CleanArchitectureBlazor.WebUI.Shared.WeatherForecasts;
 
 public class WeatherForecast
 {
@@ -6,7 +6,7 @@ public class WeatherForecast
 
     public int TemperatureC { get; set; }
 
-    public string? Summary { get; set; }
+    public string Summary { get; set; } = string.Empty;
 
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
