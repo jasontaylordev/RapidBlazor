@@ -1,4 +1,4 @@
-﻿namespace CaWorkshop.Domain.Common;
+﻿namespace CleanArchitectureBlazor.Domain.Common;
 
 public abstract class AuditableEntity
 {

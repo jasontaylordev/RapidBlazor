@@ -1,4 +1,4 @@
-﻿using CaWorkshop.Domain.Common;
+﻿using CleanArchitectureBlazor.Domain.Common;
 
 namespace CleanArchitectureBlazor.Domain.Entities;
 

@@ -1,4 +1,5 @@
 ﻿using CleanArchitectureBlazor.Application.Common.Services.Data;
+using CleanArchitectureBlazor.Application.Common.Services.Identity;
 using CleanArchitectureBlazor.Infrastructure.Data;
 using CleanArchitectureBlazor.Infrastructure.Data.Interceptors;
 using CleanArchitectureBlazor.Infrastructure.Identity;
@@ -28,6 +29,8 @@ public static class ConfigureServices
 
         services.AddIdentityServer()
             .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+
+        services.AddScoped<IIdentityService, IdentityService>();
 
         return services;
     }

@@ -1,4 +1,4 @@
-﻿using CaWorkshop.Application.Common.Models;
+﻿using CleanArchitectureBlazor.Application.Common.Models;
 using CleanArchitectureBlazor.Application.Common.Services.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

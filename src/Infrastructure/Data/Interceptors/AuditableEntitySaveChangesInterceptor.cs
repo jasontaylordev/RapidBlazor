@@ -1,4 +1,4 @@
-﻿using CaWorkshop.Domain.Common;
+﻿using CleanArchitectureBlazor.Domain.Common;
 using CleanArchitectureBlazor.Application.Common.Services.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;

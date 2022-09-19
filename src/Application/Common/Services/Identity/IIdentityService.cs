@@ -1,4 +1,4 @@
-﻿using CaWorkshop.Application.Common.Models;
+﻿using CleanArchitectureBlazor.Application.Common.Models;
 namespace CleanArchitectureBlazor.Application.Common.Services.Identity;
 
 public interface IIdentityService

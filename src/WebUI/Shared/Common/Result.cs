@@ -1,4 +1,4 @@
-﻿namespace CaWorkshop.Application.Common.Models;
+﻿namespace CleanArchitectureBlazor.Application.Common.Models;
 
 public class Result
 {
