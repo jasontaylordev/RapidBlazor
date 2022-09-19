@@ -1,27 +1,17 @@
 ﻿using CleanArchitectureBlazor.Application.TodoItems.Commands;
 using CleanArchitectureBlazor.WebUI.Shared.TodoItems;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitectureBlazor.WebUI.Server.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
-public class TodoItemsController : ControllerBase
+public class TodoItemsController : ApiControllerBase
 {
-    private readonly IMediator _mediator;
-
-    public TodoItemsController(IMediator mediator)
-    {
-        _mediator = mediator;
-    }
-
     // POST: api/TodoItems
     [HttpPost]
     public async Task<ActionResult<int>> PostTodoItem(
         CreateTodoItemRequest request)
     {
-        return await _mediator.Send(new CreateTodoItemCommand(request));
+        return await Mediator.Send(new CreateTodoItemCommand(request));
     }
 
     // PUT: api/TodoItems/5
@@ -34,7 +24,7 @@ public class TodoItemsController : ControllerBase
     {
         if (id != request.Id) return BadRequest();
 
-        await _mediator.Send(new UpdateTodoItemCommand(request));
+        await Mediator.Send(new UpdateTodoItemCommand(request));
 
         return NoContent();
     }
@@ -45,7 +35,7 @@ public class TodoItemsController : ControllerBase
     [ProducesDefaultResponseType]
     public async Task<IActionResult> DeleteTodoItem(int id)
     {
-        await _mediator.Send(new DeleteTodoItemCommand(id));
+        await Mediator.Send(new DeleteTodoItemCommand(id));
 
         return NoContent();
     }

@@ -951,7 +951,7 @@ namespace CleanArchitectureBlazor.WebUI.Client
         public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<WeatherForecast>> GetAsync(System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("WeatherForecast");
+            urlBuilder_.Append("api/WeatherForecast");
 
             var client_ = _httpClient;
             var disposeClient_ = false;

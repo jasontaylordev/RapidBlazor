@@ -4,6 +4,14 @@ namespace CleanArchitectureBlazor.Application.TodoLists.Commands;
 
 public record CreateTodoListCommand(CreateTodoListRequest List) : IRequest<int>;
 
+public class CreateTodoListCommandValidator : AbstractValidator<CreateTodoListCommand>
+{
+    public CreateTodoListCommandValidator()
+    {
+        RuleFor(p => p.List).SetValidator(new CreateTodoListRequestValidator());
+    }
+}
+
 public class CreateTodoListCommandHandler
     : IRequestHandler<CreateTodoListCommand, int>
 {

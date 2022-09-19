@@ -4,5 +4,6 @@ global using AutoMapper.QueryableExtensions;
 global using CleanArchitectureBlazor.Application.Common.Services.Data;
 global using CleanArchitectureBlazor.Domain.Entities;
 global using CleanArchitectureBlazor.WebUI.Shared.Common;
+global using FluentValidation;
 global using MediatR;
 global using Microsoft.EntityFrameworkCore;

@@ -1,27 +1,17 @@
 ﻿using CleanArchitectureBlazor.Application.TodoLists.Commands;
 using CleanArchitectureBlazor.Application.TodoLists.Queries;
 using CleanArchitectureBlazor.WebUI.Shared.TodoLists;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitectureBlazor.WebUI.Server.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
-public class TodoListsController : ControllerBase
+public class TodoListsController : ApiControllerBase
 {
-    private readonly IMediator _mediator;
-
-    public TodoListsController(IMediator mediator)
-    {
-        _mediator = mediator;
-    }
-
     // GET: api/TodoLists
     [HttpGet]
     public async Task<ActionResult<TodosVm>> GetTodoLists()
     {
-        return await _mediator.Send(new GetTodoListsQuery());
+        return await Mediator.Send(new GetTodoListsQuery());
     }
 
     // POST: api/TodoLists
@@ -29,7 +19,7 @@ public class TodoListsController : ControllerBase
     public async Task<ActionResult<int>> PostTodoList(
         CreateTodoListRequest request)
     {
-        return await _mediator.Send(new CreateTodoListCommand(request));
+        return await Mediator.Send(new CreateTodoListCommand(request));
     }
 
     // PUT: api/TodoLists/5
@@ -42,7 +32,7 @@ public class TodoListsController : ControllerBase
     {
         if (id != request.Id) return BadRequest();
 
-        await _mediator.Send(new UpdateTodoListCommand(request));
+        await Mediator.Send(new UpdateTodoListCommand(request));
 
         return NoContent();
     }
@@ -53,7 +43,7 @@ public class TodoListsController : ControllerBase
     [ProducesDefaultResponseType]
     public async Task<IActionResult> DeleteTodoList(int id)
     {
-        await _mediator.Send(new DeleteTodoListCommand(id));
+        await Mediator.Send(new DeleteTodoListCommand(id));
 
         return NoContent();
     }
