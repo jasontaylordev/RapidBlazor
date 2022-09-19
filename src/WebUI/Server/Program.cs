@@ -1,5 +1,9 @@
+using CleanArchitectureBlazor.Application.Common.Services.Identity;
 using CleanArchitectureBlazor.Infrastructure.Data;
+using CleanArchitectureBlazor.WebUI.Server.Services;
 using Microsoft.AspNetCore.Authentication;
+using NSwag.Generation.Processors.Security;
+using NSwag;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,11 +18,27 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddAuthentication()
     .AddIdentityServerJwt();
 
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ICurrentUser, CurrentUser>();
+
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-builder.Services.AddOpenApiDocument(config =>
-    config.Title = "CleanArchitectureBlazor API");
+builder.Services.AddOpenApiDocument(configure =>
+{
+    configure.Title = "CleanArchitectureBlazor API";
+    configure.AddSecurity("JWT", Enumerable.Empty<string>(),
+        new OpenApiSecurityScheme
+        {
+            Type = OpenApiSecuritySchemeType.ApiKey,
+            Name = "Authorization",
+            In = OpenApiSecurityApiKeyLocation.Header,
+            Description = "Type into the textbox: Bearer {your JWT token}."
+        });
+
+    configure.OperationProcessors.Add(
+        new AspNetCoreOperationSecurityScopeProcessor("JWT"));
+});
 
 var app = builder.Build();
 

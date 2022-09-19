@@ -1,5 +1,6 @@
 ﻿using CleanArchitectureBlazor.Application.Common.Services.Data;
 using CleanArchitectureBlazor.Infrastructure.Data;
+using CleanArchitectureBlazor.Infrastructure.Data.Interceptors;
 using CleanArchitectureBlazor.Infrastructure.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -19,6 +20,8 @@ public static class ConfigureServices
 
         services.AddScoped<IApplicationDbContext>(sp =>
             sp.GetRequiredService<ApplicationDbContext>());
+
+        services.AddScoped<AuditableEntitySaveChangesInterceptor>();
 
         services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
             .AddEntityFrameworkStores<ApplicationDbContext>();

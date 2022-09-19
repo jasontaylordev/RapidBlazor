@@ -1,6 +1,5 @@
 ﻿using CleanArchitectureBlazor.WebUI.Shared.TodoLists;
 
-
 namespace CleanArchitectureBlazor.Application.TodoLists.Queries;
 
 public record GetTodoListsQuery : IRequest<TodosVm>;

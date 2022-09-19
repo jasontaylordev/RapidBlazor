@@ -1,6 +1,8 @@
-﻿namespace CleanArchitectureBlazor.Domain.Entities;
+﻿using CaWorkshop.Domain.Common;
 
-public class TodoList
+namespace CleanArchitectureBlazor.Domain.Entities;
+
+public class TodoList : AuditableEntity
 {
     public int Id { get; set; }
 
