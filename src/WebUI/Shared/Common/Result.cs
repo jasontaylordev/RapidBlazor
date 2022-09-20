@@ -1,4 +1,4 @@
-﻿namespace CleanArchitectureBlazor.Application.Common.Models;
+﻿namespace CleanArchitectureBlazor.WebUI.Shared.Common;
 
 public class Result
 {

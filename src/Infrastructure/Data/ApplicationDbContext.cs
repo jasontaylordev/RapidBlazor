@@ -3,14 +3,13 @@ using CleanArchitectureBlazor.Domain.Entities;
 using CleanArchitectureBlazor.Infrastructure.Data.Interceptors;
 using CleanArchitectureBlazor.Infrastructure.Identity;
 using Duende.IdentityServer.EntityFramework.Options;
-using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System.Reflection;
 
 namespace CleanArchitectureBlazor.Infrastructure.Data;
 
-public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, IApplicationDbContext
+public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser, ApplicationRole>, IApplicationDbContext
 {
     private readonly AuditableEntitySaveChangesInterceptor _auditableEntitySaveChangesInterceptor;
 

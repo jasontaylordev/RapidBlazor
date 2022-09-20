@@ -5,6 +5,7 @@ using CleanArchitectureBlazor.Infrastructure.Data.Interceptors;
 using CleanArchitectureBlazor.Infrastructure.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
@@ -24,11 +25,21 @@ public static class ConfigureServices
 
         services.AddScoped<AuditableEntitySaveChangesInterceptor>();
 
-        services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-            .AddEntityFrameworkStores<ApplicationDbContext>();
+        services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
+            .AddRoles<ApplicationRole>()
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddClaimsPrincipalFactory<ApplicationUserClaimsPrincipalFactory>();
 
         services.AddIdentityServer()
-            .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+            .AddApiAuthorization<ApplicationUser, ApplicationDbContext>(options =>
+            {
+                options.IdentityResources["openid"].UserClaims.Add("role");
+                options.ApiResources.Single().UserClaims.Add("role");
+                options.IdentityResources["openid"].UserClaims.Add("permissions");
+                options.ApiResources.Single().UserClaims.Add("permissions");
+            });
+
+        JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("role");
 
         services.AddScoped<IIdentityService, IdentityService>();
 

@@ -1,5 +1,8 @@
-﻿using CleanArchitectureBlazor.Application.Common.Models;
+﻿using Ardalis.GuardClauses;
 using CleanArchitectureBlazor.Application.Common.Services.Identity;
+using CleanArchitectureBlazor.WebUI.Shared.AccessControl;
+using CleanArchitectureBlazor.WebUI.Shared.Authorization;
+using CleanArchitectureBlazor.WebUI.Shared.Common;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,10 +11,14 @@ namespace CleanArchitectureBlazor.Infrastructure.Identity;
 public class IdentityService : IIdentityService
 {
     private readonly UserManager<ApplicationUser> _userManager;
+    private readonly RoleManager<ApplicationRole> _roleManager;
 
-    public IdentityService(UserManager<ApplicationUser> userManager)
+    public IdentityService(
+        UserManager<ApplicationUser> userManager,
+        RoleManager<ApplicationRole> roleManager)
     {
         _userManager = userManager;
+        _roleManager = roleManager;
     }
 
     public async Task<string> GetUserNameAsync(string userId)
@@ -64,5 +71,106 @@ public class IdentityService : IIdentityService
         }
 
         return Result.Failure(result.Errors.Select(e => e.Description));
+    }
+
+    public async Task<IList<RoleDto>> GetRolesAsync(CancellationToken cancellationToken)
+    {
+        var roles = await _roleManager.Roles
+            .ToListAsync(cancellationToken);
+
+        var result = roles
+            .Select(r => new RoleDto(r.Id, r.Name, r.Permissions))
+            .OrderBy(r => r.Name)
+            .ToList();
+
+        return result;
+    }
+
+    public async Task UpdateRolePermissionsAsync(string roleId, Permissions permissions)
+    {
+        var role = await _roleManager.FindByIdAsync(roleId);
+
+        if (role != null)
+        {
+            role.Permissions = permissions;
+
+            await _roleManager.UpdateAsync(role);
+        }
+    }
+
+    public async Task<IList<UserDto>> GetUsersAsync(CancellationToken cancellationToken)
+    {
+        return await _userManager.Users
+            .OrderBy(r => r.UserName)
+            .Select(u => new UserDto(u.Id, u.UserName, u.Email))
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task<UserDto> GetUserAsync(string id)
+    {
+        var user = await _userManager.FindByIdAsync(id);
+
+        Guard.Against.NotFound(id, user);
+
+        var result = new UserDto(user.Id, user.UserName, user.Email);
+
+        var roles = await _userManager.GetRolesAsync(user);
+
+        result.Roles.AddRange(roles);
+
+        return result;
+    }
+
+    public async Task UpdateUserAsync(UserDto updatedUser)
+    {
+        var user = await _userManager.FindByIdAsync(updatedUser.Id);
+
+        Guard.Against.NotFound(updatedUser.Id, user);
+
+        user.UserName = updatedUser.UserName;
+        user.Email = updatedUser.Email;
+
+        await _userManager.UpdateAsync(user);
+
+        var currentRoles = await _userManager.GetRolesAsync(user);
+        var addedRoles = updatedUser.Roles.Except(currentRoles);
+        var removedRoles = currentRoles.Except(updatedUser.Roles);
+
+        if (addedRoles.Any())
+        {
+            await _userManager.AddToRolesAsync(user, addedRoles);
+        }
+
+        if (removedRoles.Any())
+        {
+            await _userManager.RemoveFromRolesAsync(user, removedRoles);
+        }
+    }
+
+    public async Task CreateRoleAsync(RoleDto newRole)
+    {
+        var role = new ApplicationRole { Name = newRole.Name };
+
+        await _roleManager.CreateAsync(role);
+    }
+
+    public async Task UpdateRoleAsync(RoleDto updatedRole)
+    {
+        var role = await _roleManager.FindByIdAsync(updatedRole.Id);
+
+        Guard.Against.NotFound(updatedRole.Id, role);
+
+        role.Name = updatedRole.Name;
+
+        await _roleManager.UpdateAsync(role);
+    }
+
+    public async Task DeleteRoleAsync(string roleId)
+    {
+        var role = await _roleManager.FindByIdAsync(roleId);
+
+        Guard.Against.NotFound(roleId, role);
+
+        await _roleManager.DeleteAsync(role);
     }
 }

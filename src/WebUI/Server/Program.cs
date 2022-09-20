@@ -1,9 +1,13 @@
+using CleanArchitectureBlazor.Application;
 using CleanArchitectureBlazor.Application.Common.Services.Identity;
+using CleanArchitectureBlazor.Infrastructure;
 using CleanArchitectureBlazor.Infrastructure.Data;
 using CleanArchitectureBlazor.WebUI.Server.Services;
+using CleanArchitectureBlazor.WebUI.Shared.Authorization;
 using Microsoft.AspNetCore.Authentication;
-using NSwag.Generation.Processors.Security;
+using Microsoft.AspNetCore.Authorization;
 using NSwag;
+using NSwag.Generation.Processors.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,6 +44,9 @@ builder.Services.AddOpenApiDocument(configure =>
         new AspNetCoreOperationSecurityScopeProcessor("JWT"));
 });
 
+builder.Services.AddSingleton<IAuthorizationHandler, PermissionAuthorizationHandler>();
+builder.Services.AddSingleton<IAuthorizationPolicyProvider, FlexibleAuthorizationPolicyProvider>();
+
 var app = builder.Build();
 
 // Initialise and seed the database
@@ -49,8 +56,8 @@ using (var scope = app.Services.CreateScope())
     try
     {
         var initialiser = scope.ServiceProvider.GetRequiredService<ApplicationDbContextInitialiser>();
-        initialiser.Initialise();
-        initialiser.Seed();
+        await initialiser.InitialiseAsync();
+        await initialiser.SeedAsync();
     }
     catch (Exception ex)
     {

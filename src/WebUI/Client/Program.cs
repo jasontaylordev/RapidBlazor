@@ -1,4 +1,7 @@
 using CleanArchitectureBlazor.WebUI.Client;
+using CleanArchitectureBlazor.WebUI.Client.Authorization;
+using CleanArchitectureBlazor.WebUI.Shared.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -14,14 +17,14 @@ builder.Services.AddHttpClient("CleanArchitectureBlazor.WebUI.ServerAPI", client
 // Supply HttpClient instances that include access tokens when making requests to the server project
 builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("CleanArchitectureBlazor.WebUI.ServerAPI"));
 
-builder.Services.AddApiAuthorization();
+builder.Services
+    .AddApiAuthorization()
+    .AddAccountClaimsPrincipalFactory<CustomAccountClaimsPrincipalFactory>();
 
-builder.Services.AddSingleton<IJSInProcessRuntime>(services =>
-    (IJSInProcessRuntime)services.GetRequiredService<IJSRuntime>());
+builder.Services.AddSingleton<IAuthorizationHandler, PermissionAuthorizationHandler>();
+builder.Services.AddSingleton<IAuthorizationPolicyProvider, FlexibleAuthorizationPolicyProvider>();
 
-//builder.Services.AddHttpClient<IWeatherForecastClient, WeatherForecastClient>();
-//builder.Services.AddHttpClient<ITodoListsClient, TodoListsClient>();
-//builder.Services.AddHttpClient<ITodoItemsClient, TodoItemsClient>();
+builder.Services.AddSingleton(services => (IJSInProcessRuntime)services.GetRequiredService<IJSRuntime>());
 
 // NOTE: https://github.com/khellang/Scrutor/issues/180
 builder.Services.Scan(scan => scan

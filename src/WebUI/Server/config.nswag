@@ -98,7 +98,8 @@
         "Microsoft.AspNetCore.Mvc",
         "CleanArchitectureBlazor.WebUI.Shared.TodoItems",
         "CleanArchitectureBlazor.WebUI.Shared.TodoLists",
-        "CleanArchitectureBlazor.WebUI.Shared.WeatherForecasts"
+        "CleanArchitectureBlazor.WebUI.Shared.WeatherForecasts",
+        "CleanArchitectureBlazor.WebUI.Shared.AccessControl"
       ],
       "additionalContractNamespaceUsages": [],
       "generateOptionalParameters": false,

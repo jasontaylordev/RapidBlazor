@@ -13,7 +13,7 @@ public static class ConfigureServices
         services.AddValidatorsFromAssemblyContaining<CreateTodoListRequestValidator>();
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
-        services.AddMediatR(Assembly.GetExecutingAssembly());       
+        services.AddMediatR(Assembly.GetExecutingAssembly());
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehaviour<,>));
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
