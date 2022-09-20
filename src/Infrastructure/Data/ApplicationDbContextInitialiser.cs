@@ -33,7 +33,7 @@ public class ApplicationDbContextInitialiser
 
         var list = new TodoList
         {
-            Title = "Todo List",
+            Title = "✨ Todo List",
             Items =
                 {
                     new TodoItem { Title = "Make a todo list 📃" },

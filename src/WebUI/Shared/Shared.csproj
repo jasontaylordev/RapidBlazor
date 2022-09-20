@@ -1,18 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-      <RootNamespace>CleanArchitectureBlazor.WebUI.Shared</RootNamespace>
-      <AssemblyName>CleanArchitectureBlazor.WebUI.Shared</AssemblyName>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>CleanArchitectureBlazor.WebUI.Shared</RootNamespace>
+        <AssemblyName>CleanArchitectureBlazor.WebUI.Shared</AssemblyName>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <SupportedPlatform Include="browser" />
-  </ItemGroup>
+    <ItemGroup>
+        <SupportedPlatform Include="browser" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="11.2.2" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="FluentValidation" Version="10.4.0" />
+    </ItemGroup>
 </Project>
