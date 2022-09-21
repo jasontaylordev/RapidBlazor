@@ -1,6 +1,5 @@
 ﻿using CleanArchitectureBlazor.Application.Common.Services.Identity;
 using MediatR.Pipeline;
-using Microsoft.Extensions.Logging;
 
 namespace CleanArchitectureBlazor.Application.Common.Behaviours;
 

@@ -8,4 +8,8 @@
       <AssemblyName>CleanArchitectureBlazor.Domain</AssemblyName>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="10.0.1" />
+  </ItemGroup>
+
 </Project>

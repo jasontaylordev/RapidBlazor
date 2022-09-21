@@ -1,6 +1,6 @@
 ﻿namespace CleanArchitectureBlazor.Domain.Common;
 
-public abstract class AuditableEntity
+public abstract class BaseAuditableEntity : BaseEntity
 {
     public string? CreatedBy { get; set; }
 

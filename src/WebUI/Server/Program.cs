@@ -1,6 +1,4 @@
-using CleanArchitectureBlazor.Application;
 using CleanArchitectureBlazor.Application.Common.Services.Identity;
-using CleanArchitectureBlazor.Infrastructure;
 using CleanArchitectureBlazor.Infrastructure.Data;
 using CleanArchitectureBlazor.WebUI.Server.Services;
 using CleanArchitectureBlazor.WebUI.Shared.Authorization;

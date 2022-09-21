@@ -1,4 +1,6 @@
-﻿using CleanArchitectureBlazor.WebUI.Shared.TodoItems;
+﻿using CleanArchitectureBlazor.Domain.Enums;
+using CleanArchitectureBlazor.Domain.Events;
+using CleanArchitectureBlazor.WebUI.Shared.TodoItems;
 
 namespace CleanArchitectureBlazor.Application.TodoItems.Commands;
 
@@ -27,6 +29,11 @@ public class UpdateTodoItemCommandHandler
         entity.Done = request.Item.Done;
         entity.Priority = (PriorityLevel)request.Item.Priority;
         entity.Note = request.Item.Note;
+
+        if (entity.Done)
+        {
+            entity.AddDomainEvent(new TodoItemCompletedEvent(entity));
+        }
 
         await _context.SaveChangesAsync(cancellationToken);
     }

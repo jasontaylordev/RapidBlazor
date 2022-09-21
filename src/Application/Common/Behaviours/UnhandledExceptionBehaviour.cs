@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-
-namespace CleanArchitectureBlazor.Application.Common.Behaviours;
+﻿namespace CleanArchitectureBlazor.Application.Common.Behaviours;
 
 public class UnhandledExceptionBehaviour<TRequest, TResponse>
     : IPipelineBehavior<TRequest, TResponse>

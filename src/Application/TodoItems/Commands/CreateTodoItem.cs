@@ -1,4 +1,5 @@
-﻿using CleanArchitectureBlazor.WebUI.Shared.TodoItems;
+﻿using CleanArchitectureBlazor.Domain.Events;
+using CleanArchitectureBlazor.WebUI.Shared.TodoItems;
 
 namespace CleanArchitectureBlazor.Application.TodoItems.Commands;
 
@@ -23,6 +24,8 @@ public class CreateTodoItemCommandHandler
             Title = request.Item.Title,
             Done = false
         };
+
+        entity.AddDomainEvent(new TodoItemCreatedEvent(entity));
 
         _context.TodoItems.Add(entity);
 

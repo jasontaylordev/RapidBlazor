@@ -1,4 +1,5 @@
-﻿using CleanArchitectureBlazor.WebUI.Shared.TodoLists;
+﻿using CleanArchitectureBlazor.Domain.Enums;
+using CleanArchitectureBlazor.WebUI.Shared.TodoLists;
 
 namespace CleanArchitectureBlazor.Application.TodoLists.Queries;
 

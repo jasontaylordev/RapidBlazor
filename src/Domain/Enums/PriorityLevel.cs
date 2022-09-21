@@ -1,4 +1,4 @@
-﻿namespace CleanArchitectureBlazor.Domain.Entities;
+﻿namespace CleanArchitectureBlazor.Domain.Enums;
 
 public enum PriorityLevel
 {
