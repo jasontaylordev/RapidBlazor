@@ -140,8 +140,12 @@ resource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
           value: applicationInsights.properties.ConnectionString
         }
         {
-          name: 'SqlDatabaseConnectionString'
+          name: 'ConnectionStrings:DefaultConnection'
           value: sqlDatabaseConnectionString
+        }
+        {
+          name: 'WEBSITE_LOAD_CERTIFICATES'
+          value: '589674EBD5A9C2A5B3A225CC699A8FC67D978464'
         }
       ]
     }
