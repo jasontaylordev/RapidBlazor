@@ -1,0 +1,13 @@
+name: deploy-toy-website-end-to-end
+
+on: 
+  push:
+    branches: 
+      - main
+
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    uses: ./.github/workflows/build.yml
