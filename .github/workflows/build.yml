@@ -27,15 +27,17 @@ jobs:
 
     - name: Publish website
       run: |
-        dotnet publish --no-build --no-restore --configuration Release --output ./publish
+        dotnet publish --no-build --no-restore --configuration Release --self-contained --runtime win-x64 --output ./publish
       working-directory: ./src/WebUI/Server
     
     - name: Zip website
       run: |
-        zip -r ./publish.zip ./src/WebUI/Server/publish
+        zip -r ./publish.zip .
+      working-directory: ./src/WebUI/Server/publish
 
     - name: Upload website as workflow artifact
       uses: actions/upload-artifact@v2
       with:
         name: website
-        path: ./publish.zip
+        path: ./src/WebUI/Server/publish/publish.zip
+        if-no-files-found: error

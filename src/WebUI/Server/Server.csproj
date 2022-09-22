@@ -2,6 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>CleanArchitectureBlazor.WebUI.Server</RootNamespace>
