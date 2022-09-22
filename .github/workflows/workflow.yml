@@ -1,4 +1,4 @@
-name: deploy-toy-website-end-to-end
+name: deploy-website-end-to-end
 
 on: 
   push:

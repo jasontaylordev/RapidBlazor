@@ -9,12 +9,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/checkout@v2
+
     - name: Install .NET
       uses: actions/setup-dotnet@v1
-    - name: Restore
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore --configuration Release
-    - name: Test
-      run: dotnet test --no-build --no-restore --configuration Release
+
+    - name: Restore website
+      run: |
+        dotnet restore
+
+    - name: Build website
+      run: |
+        dotnet build --no-restore --configuration Release
+
+    - name: Test website
+      run: |
+        dotnet test --no-build --no-restore --configuration Release
+
+    - name: Publish website
+      run: |
+        dotnet publish --no-build --no-restore --configuration Release --output ./publish
+      working-directory: ./src/WebUI/Server
+    
+    - name: Zip website
+      run: |
+        zip -r ./publish.zip ./src/WebUI/Server/publish
+
+    - name: Upload website as workflow artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: website
+        path: ./publish.zip
