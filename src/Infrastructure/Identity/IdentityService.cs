@@ -79,7 +79,7 @@ public class IdentityService : IIdentityService
             .ToListAsync(cancellationToken);
 
         var result = roles
-            .Select(r => new RoleDto(r.Id, r.Name, r.Permissions))
+            .Select(r => new RoleDto(r.Id, r.Name ?? string.Empty, r.Permissions))
             .OrderBy(r => r.Name)
             .ToList();
 
@@ -102,7 +102,7 @@ public class IdentityService : IIdentityService
     {
         return await _userManager.Users
             .OrderBy(r => r.UserName)
-            .Select(u => new UserDto(u.Id, u.UserName, u.Email))
+            .Select(u => new UserDto(u.Id, u.UserName ?? string.Empty, u.Email ?? string.Empty))
             .ToListAsync(cancellationToken);
     }
 
@@ -112,7 +112,7 @@ public class IdentityService : IIdentityService
 
         Guard.Against.NotFound(id, user);
 
-        var result = new UserDto(user.Id, user.UserName, user.Email);
+        var result = new UserDto(user.Id, user.UserName ?? string.Empty, user.Email ?? string.Empty);
 
         var roles = await _userManager.GetRolesAsync(user);
 

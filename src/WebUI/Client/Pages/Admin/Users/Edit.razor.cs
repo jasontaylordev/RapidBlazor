@@ -6,7 +6,7 @@ namespace CleanArchitectureBlazor.WebUI.Client.Pages.Admin.Users;
 public partial class Edit
 {
     [Parameter]
-    public string UserId { get; set; }
+    public string UserId { get; set; } = null!;
 
     [Inject]
     public IUsersClient UsersClient { get; set; } = null!;

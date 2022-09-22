@@ -24,7 +24,7 @@ public class ApplicationUserClaimsPrincipalFactory : UserClaimsPrincipalFactory<
         var userRoleNames = await UserManager.GetRolesAsync(user) ?? Array.Empty<string>();
 
         var userRoles = await RoleManager.Roles.Where(r =>
-            userRoleNames.Contains(r.Name)).ToListAsync();
+            userRoleNames.Contains(r.Name ?? string.Empty)).ToListAsync();
 
         var userPermissions = Permissions.None;
 
