@@ -19,13 +19,21 @@ param sqlServerAdministratorLogin string
 @description('The administrator login password for the SQL server.')
 param sqlServerAdministratorLoginPassword string
 
+@secure()
+@description('The service principal object id')
+param servicePrincipalObjectId string
+
+@description('The name of the project.')
+param projectName string = 'blazor'
+
 // Define the names for resources.
-var appServiceAppName = 'blazor-website-${resourceNameSuffix}'
-var appServicePlanName = 'blazor-website'
-var logAnalyticsWorkspaceName = 'laws-blazor-website'
-var applicationInsightsName = 'blazor-website'
-var sqlServerName = 'blazor-website-${resourceNameSuffix}'
-var sqlDatabaseName = 'CleanArchitectureBlazorDb'
+var keyVaultName = '${projectName}-keyvault'
+var appServiceAppName = '${projectName}-website-${resourceNameSuffix}'
+var appServicePlanName = '${projectName}-website'
+var logAnalyticsWorkspaceName = 'laws-${projectName}-website'
+var applicationInsightsName = '${projectName}-website'
+var sqlServerName = '${projectName}-website-${resourceNameSuffix}'
+var sqlDatabaseName = '${projectName}Db'
 
 // Define the connection string to access Azure SQL.
 var sqlDatabaseConnectionString = 'Server=tcp:${sqlServer.properties.fullyQualifiedDomainName},1433;Initial Catalog=${sqlDatabase.name};Persist Security Info=False;User ID=${sqlServerAdministratorLogin};Password=${sqlServerAdministratorLoginPassword};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
@@ -67,6 +75,44 @@ var environmentConfigurationMap = {
         name: 'Standard'
         tier: 'Standard'
       }
+    }
+  }
+}
+
+resource keyVault 'Microsoft.KeyVault/vaults@2019-09-01' = {
+  name: keyVaultName
+  location: location
+  properties: {
+    enabledForTemplateDeployment: true
+    createMode: 'default'
+    tenantId: subscription().tenantId
+    accessPolicies: [
+      {
+        objectId: servicePrincipalObjectId
+        tenantId: subscription().tenantId
+        permissions: {
+          secrets: [
+            'get'
+            'list'
+            'set'
+          ]
+        }
+      }
+    ]
+    sku: {
+      name: 'standard'
+      family: 'A'
+    }
+  }
+}
+
+resource connectionStringSecret 'Microsoft.KeyVault/vaults/secrets@2019-09-01' = {
+  name: '${keyVault.name}/ConnectionStrings--DefaultConnection'
+  properties: {
+    value: sqlDatabaseConnectionString
+    contentType: 'string'
+    attributes: {
+      enabled: true
     }
   }
 }
