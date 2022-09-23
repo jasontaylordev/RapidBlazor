@@ -27,7 +27,7 @@ jobs:
 
     - name: Publish website
       run: |
-        dotnet publish --no-build --no-restore --configuration Release --self-contained --runtime win-x64 --output ./publish
+        dotnet publish --no-build --no-restore --configuration Release --output ./publish
       working-directory: ./src/WebUI/Server
     
     - name: Zip website

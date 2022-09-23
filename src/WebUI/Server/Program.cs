@@ -45,6 +45,8 @@ builder.Services.AddOpenApiDocument(configure =>
 builder.Services.AddSingleton<IAuthorizationHandler, PermissionAuthorizationHandler>();
 builder.Services.AddSingleton<IAuthorizationPolicyProvider, FlexibleAuthorizationPolicyProvider>();
 
+builder.Services.AddApplicationInsightsTelemetry();
+
 var app = builder.Build();
 
 // Initialise and seed the database

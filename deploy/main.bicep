@@ -132,11 +132,11 @@ resource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
     siteConfig: {
       appSettings: [
         {
-          name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
+          name: 'ApplicationInsights:InstrumentationKey'
           value: applicationInsights.properties.InstrumentationKey
         }
         {
-          name: 'APPLICATIONINSIGHTS_CONNECTION_STRING'
+          name: 'ApplicationInsights:ConnectionString'
           value: applicationInsights.properties.ConnectionString
         }
         {

@@ -30,7 +30,7 @@ public class ApplicationDbContextInitialiser
 
     public async Task InitialiseAsync()
     {
-        await InitialiseWithDropCreateAsync();
+        await InitialiseWithMigrationsAsync();
     }
 
     private async Task InitialiseWithDropCreateAsync()
@@ -96,7 +96,11 @@ public class ApplicationDbContextInitialiser
         // Create default admin user
         var adminUserName = "admin@localhost";
         var adminUser = new ApplicationUser { UserName = adminUserName, Email = adminUserName };
+        
         await _userManager.CreateAsync(adminUser, DefaultPassword);
+
+        adminUser = await _userManager.FindByNameAsync(adminUserName);
+        
         await _userManager.AddToRoleAsync(adminUser, AdministratorsRole);
 
         // Create default auditor user
