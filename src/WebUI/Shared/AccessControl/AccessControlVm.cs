@@ -4,18 +4,14 @@ namespace CleanArchitectureBlazor.WebUI.Shared.AccessControl;
 
 public class AccessControlVm
 {
-    public AccessControlVm() { }
+    public AccessControlVm()
+    {
+    }
 
-    public AccessControlVm(IList<RoleDto> roles)
+    public AccessControlVm(IList<RoleDto> roles, IList<Permissions> permissions)
     {
         Roles = roles;
-
-        foreach (var permission in PermissionsProvider.GetAll())
-        {
-            if (permission == Permissions.None) continue;
-
-            AvailablePermissions.Add(permission);
-        }
+        AvailablePermissions = permissions;
     }
 
     public IList<RoleDto> Roles { get; set; } = new List<RoleDto>();

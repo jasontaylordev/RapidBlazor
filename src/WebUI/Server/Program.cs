@@ -99,6 +99,7 @@ app.UseReDoc(configure =>
 app.UseRouting();
 
 app.UseIdentityServer();
+app.UseAuthentication();
 app.UseAuthorization();
 
 

@@ -1,19 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
-        <Nullable>enable</Nullable>
-        <ImplicitUsings>enable</ImplicitUsings>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>CleanArchitectureBlazor.WebUI.Shared</RootNamespace>
         <AssemblyName>CleanArchitectureBlazor.WebUI.Shared</AssemblyName>
-    </PropertyGroup>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <SupportedPlatform Include="browser" />
-    </ItemGroup>
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="FluentValidation" Version="10.4.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="7.0.0-rc.1.22427.2" />
+        <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="6.0.9" />
     </ItemGroup>
 </Project>

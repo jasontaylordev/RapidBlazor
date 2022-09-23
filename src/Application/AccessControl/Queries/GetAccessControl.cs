@@ -1,5 +1,6 @@
 ﻿using CleanArchitectureBlazor.Application.Common.Services.Identity;
 using CleanArchitectureBlazor.WebUI.Shared.AccessControl;
+using CleanArchitectureBlazor.WebUI.Shared.Authorization;
 
 namespace CleanArchitectureBlazor.Application.AccessControl.Queries;
 
@@ -16,10 +17,17 @@ public class GetAccessControlQueryHandler : IRequestHandler<GetAccessControlQuer
 
     public async Task<AccessControlVm> Handle(GetAccessControlQuery request, CancellationToken cancellationToken)
     {
-        var result = new AccessControlVm
+        var permissions = new List<Permissions>();
+        foreach (var permission in PermissionsProvider.GetAll())
         {
-            Roles = await _identityService.GetRolesAsync(cancellationToken)
-        };
+            if (permission == Permissions.None) continue;
+
+            permissions.Add(permission);
+        }
+
+        var roles = await _identityService.GetRolesAsync(cancellationToken);
+
+        var result = new AccessControlVm(roles, permissions);
 
         return result;
     }
