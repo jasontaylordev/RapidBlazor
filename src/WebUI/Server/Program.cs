@@ -48,7 +48,6 @@ builder.Services.AddSingleton<IAuthorizationPolicyProvider, FlexibleAuthorizatio
 var app = builder.Build();
 
 // Initialise and seed the database
-#if DEBUG
 using (var scope = app.Services.CreateScope())
 {
     try
@@ -65,7 +64,6 @@ using (var scope = app.Services.CreateScope())
         throw;
     }
 }
-#endif
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
