@@ -87,17 +87,17 @@ resource keyVault 'Microsoft.KeyVault/vaults@2019-09-01' = {
     createMode: 'default'
     tenantId: subscription().tenantId
     accessPolicies: [
-      {
-        objectId: servicePrincipalObjectId
-        tenantId: subscription().tenantId
-        permissions: {
-          secrets: [
-            'get'
-            'list'
-            'set'
-          ]
-        }
-      }
+      // {
+      //   objectId: servicePrincipalObjectId
+      //   tenantId: subscription().tenantId
+      //   permissions: {
+      //     secrets: [
+      //       'get'
+      //       'list'
+      //       'set'
+      //     ]
+      //   }
+      // }
       {
         tenantId: subscription().tenantId
         objectId: '77bbd9e2-ad94-4850-922f-d9590310e295'
@@ -223,6 +223,9 @@ resource keyVaultAccessPolicy 'Microsoft.KeyVault/vaults/accessPolicies@2019-09-
           ]
           certificates: [
             'Get'
+            'List'
+            'Create'
+            'Update'
           ]
         }
       }
