@@ -98,6 +98,52 @@ resource keyVault 'Microsoft.KeyVault/vaults@2019-09-01' = {
           ]
         }
       }
+      {
+        tenantId: subscription().tenantId
+        objectId: '77bbd9e2-ad94-4850-922f-d9590310e295'
+        permissions: {
+          certificates: [
+            'Get'
+            'List'
+            'Update'
+            'Create'
+            'Import'
+            'Delete'
+            'Recover'
+            'Backup'
+            'Restore'
+            'ManageContacts'
+            'ManageIssuers'
+            'GetIssuers'
+            'ListIssuers'
+            'SetIssuers'
+            'DeleteIssuers'
+          ]
+          keys: [
+            'Get'
+            'List'
+            'Update'
+            'Create'
+            'Import'
+            'Delete'
+            'Recover'
+            'Backup'
+            'Restore'
+            'GetRotationPolicy'
+            'SetRotationPolicy'
+            'Rotate'
+          ]
+          secrets: [
+            'Get'
+            'List'
+            'Set'
+            'Delete'
+            'Recover'
+            'Backup'
+            'Restore'
+          ]
+        }
+      }
     ]
     sku: {
       name: 'standard'
@@ -169,11 +215,14 @@ resource keyVaultAccessPolicy 'Microsoft.KeyVault/vaults/accessPolicies@2019-09-
         objectId: appServiceApp.identity.principalId
         permissions: {
           keys: [
-            'get'
+            'Get'
           ]
           secrets: [
-            'list'
-            'get'
+            'List'
+            'Get'
+          ]
+          certificates: [
+            'Get'
           ]
         }
       }
