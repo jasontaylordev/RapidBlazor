@@ -133,6 +133,7 @@ resource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
     serverFarmId: appServicePlan.id
     httpsOnly: true
     siteConfig: {
+      netFrameworkVersion: 'v6.0'
       appSettings: [
         {
           name: 'ApplicationInsights:InstrumentationKey'
@@ -147,11 +148,36 @@ resource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
           value: sqlDatabaseConnectionString
         }
         {
+          name: 'KeyVaultUri'
+          value: keyVault.properties.vaultUri
+        }
+        {
           name: 'WEBSITE_LOAD_CERTIFICATES'
           value: '589674EBD5A9C2A5B3A225CC699A8FC67D978464'
         }
       ]
     }
+  }
+}
+
+resource keyVaultAccessPolicy 'Microsoft.KeyVault/vaults/accessPolicies@2019-09-01' = {
+  name: '${keyVaultName}/add'
+  properties: {
+    accessPolicies: [
+      {
+        tenantId: appServiceApp.identity.tenantId
+        objectId: appServiceApp.identity.principalId
+        permissions: {
+          keys: [
+            'get'
+          ]
+          secrets: [
+            'list'
+            'get'
+          ]
+        }
+      }
+    ]
   }
 }
 
