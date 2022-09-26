@@ -190,10 +190,11 @@ resource appServiceAppConfig 'Microsoft.Web/sites/config@2022-03-01' = {
   parent: appServiceApp
   properties: {
     WEBSITE_LOAD_CERTIFICATES: certificate.properties.thumbprint
-    ApplicationInsights__InstrumentationKey:applicationInsights.properties.InstrumentationKey
-    ConnectionStrings__DefaultConnection:sqlDatabaseConnectionString
-    ApplicationInsights__ConnectionString:applicationInsights.properties.ConnectionString
+    ApplicationInsights__InstrumentationKey: applicationInsights.properties.InstrumentationKey
+    ConnectionStrings__DefaultConnection: sqlDatabaseConnectionString
+    ApplicationInsights__ConnectionString: applicationInsights.properties.ConnectionString
     KeyVaultUri: keyVault.properties.vaultUri
+    IdentityServer__Key__Name: certificateName
   }
 }
 
