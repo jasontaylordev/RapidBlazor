@@ -194,7 +194,6 @@ resource appServiceAppConfig 'Microsoft.Web/sites/config@2022-03-01' = {
     ConnectionStrings__DefaultConnection: sqlDatabaseConnectionString
     ApplicationInsights__ConnectionString: applicationInsights.properties.ConnectionString
     KeyVaultUri: keyVault.properties.vaultUri
-    IdentityServer__Key__Name: certificateName
   }
 }
 
