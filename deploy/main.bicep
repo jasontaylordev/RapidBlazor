@@ -87,17 +87,6 @@ resource keyVault 'Microsoft.KeyVault/vaults@2019-09-01' = {
     createMode: 'default'
     tenantId: subscription().tenantId
     accessPolicies: [
-      // {
-      //   objectId: servicePrincipalObjectId
-      //   tenantId: subscription().tenantId
-      //   permissions: {
-      //     secrets: [
-      //       'get'
-      //       'list'
-      //       'set'
-      //     ]
-      //   }
-      // }
       {
         tenantId: subscription().tenantId
         objectId: '77bbd9e2-ad94-4850-922f-d9590310e295'
@@ -180,29 +169,31 @@ resource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
     httpsOnly: true
     siteConfig: {
       netFrameworkVersion: 'v6.0'
-      appSettings: [
-        {
-          name: 'ApplicationInsights:InstrumentationKey'
-          value: applicationInsights.properties.InstrumentationKey
-        }
-        {
-          name: 'ApplicationInsights:ConnectionString'
-          value: applicationInsights.properties.ConnectionString
-        }
-        {
-          name: 'ConnectionStrings:DefaultConnection'
-          value: sqlDatabaseConnectionString
-        }
-        {
-          name: 'KeyVaultUri'
-          value: keyVault.properties.vaultUri
-        }
-        {
-          name: 'WEBSITE_LOAD_CERTIFICATES'
-          value: '589674EBD5A9C2A5B3A225CC699A8FC67D978464'
-        }
-      ]
     }
+  }
+}
+
+var certificateName = appServiceApp.properties.defaultHostName
+
+resource certificate 'Microsoft.Web/certificates@2022-03-01' = {
+  name: 'blazor-website-certificate'
+  location:  location
+  properties: {
+    canonicalName: certificateName
+    domainValidationMethod: 'http-token'
+    serverFarmId: resourceId('Microsoft.Web/serverfarms', appServicePlanName)
+  }
+}
+
+resource appServiceAppConfig 'Microsoft.Web/sites/config@2022-03-01' = {
+  name: 'appsettings'
+  parent: appServiceApp
+  properties: {
+    WEBSITE_LOAD_CERTIFICATES: certificate.properties.thumbprint
+    ApplicationInsights__InstrumentationKey:applicationInsights.properties.InstrumentationKey
+    ConnectionStrings__DefaultConnection:sqlDatabaseConnectionString
+    ApplicationInsights__ConnectionString:applicationInsights.properties.ConnectionString
+    KeyVaultUri: keyVault.properties.vaultUri
   }
 }
 
