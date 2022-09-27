@@ -7,6 +7,16 @@ jobs:
   build-application:
     name: Build application
     runs-on: ubuntu-latest
+
+    services:
+      sql:
+        image: mcr.microsoft.com/mssql/server
+        ports:
+          - 1433:1433
+        env:
+          SA_PASSWORD: Your_password123
+          ACCEPT_EULA: Y
+
     steps:
     - uses: actions/checkout@v2
 
@@ -24,6 +34,8 @@ jobs:
     - name: Test website
       run: |
         dotnet test --no-build --no-restore --configuration Release --filter "FullyQualifiedName!~AcceptanceTests"
+      env:
+        ConnectionStrings__DefaultConnection: Server=.;Database=CleanArchitectureBlazorDb-Test;User=sa;Password=Your_password123;MultipleActiveResultSets=true;Encrypt=false;
 
     - name: Publish website
       run: |
