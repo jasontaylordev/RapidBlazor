@@ -177,7 +177,7 @@ resource certificate 'Microsoft.Web/certificates@2022-03-01' = {
   name: 'blazor-website-certificate'
   location:  location
   properties: {
-    canonicalName: 'CN=blazor-website-certificate'
+    canonicalName: appServiceApp.properties.defaultHostName
     domainValidationMethod: 'http-token'
     serverFarmId: resourceId('Microsoft.Web/serverfarms', appServicePlanName)
   }
