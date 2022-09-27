@@ -23,8 +23,4 @@
     <ProjectReference Include="..\WebUI\Shared\Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="TodoLists\Queries\GetTodoLists\" />
-  </ItemGroup>
-
 </Project>

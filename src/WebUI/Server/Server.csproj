@@ -46,4 +46,8 @@
         <Exec WorkingDirectory="$(ProjectDir)" EnvironmentVariables="ASPNETCORE_ENVIRONMENT=Development" Command="$(NSwagExe_Net60) run /variables:Configuration=$(Configuration)" />
     </Target>
 
+    <ItemGroup>
+        <InternalsVisibleTo Include="CleanArchitectureBlazor.Application.SubcutaneousTests" />
+    </ItemGroup>
+
 </Project>

@@ -5,6 +5,14 @@ namespace CleanArchitectureBlazor.Application.TodoItems.Commands;
 
 public record CreateTodoItemCommand(CreateTodoItemRequest Item) : IRequest<int>;
 
+public class CreateTodoItemCommandValidator : AbstractValidator<CreateTodoItemCommand>
+{
+    public CreateTodoItemCommandValidator()
+    {
+        RuleFor(p => p.Item).SetValidator(new CreateTodoItemRequestValidator());
+    }
+}
+
 public class CreateTodoItemCommandHandler
         : IRequestHandler<CreateTodoItemCommand, int>
 {

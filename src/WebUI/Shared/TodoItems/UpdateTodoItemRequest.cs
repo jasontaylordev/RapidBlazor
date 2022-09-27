@@ -1,4 +1,7 @@
-﻿namespace CleanArchitectureBlazor.WebUI.Shared.TodoItems;
+﻿using CleanArchitectureBlazor.WebUI.Shared.TodoLists;
+using FluentValidation;
+
+namespace CleanArchitectureBlazor.WebUI.Shared.TodoItems;
 
 public class UpdateTodoItemRequest
 {
