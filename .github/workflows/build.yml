@@ -23,7 +23,7 @@ jobs:
 
     - name: Test website
       run: |
-        dotnet test --no-build --no-restore --configuration Release
+        dotnet test --no-build --no-restore --configuration Release --filter "FullyQualifiedName!~AcceptanceTests"
 
     - name: Publish website
       run: |
