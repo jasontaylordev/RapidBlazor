@@ -20,16 +20,17 @@ param sqlServerAdministratorLogin string
 param sqlServerAdministratorLoginPassword string
 
 @description('The name of the project.')
-param projectName string = 'CleanArchitectureBlazor'
+param projectName string = 'CaBlazor'
 
 // Define the names for resources.
-var keyVaultName = '${projectName}-keyvault'
-var appServiceAppName = '${projectName}-website-${resourceNameSuffix}'
-var appServicePlanName = '${projectName}-website'
-var logAnalyticsWorkspaceName = 'laws-${projectName}-website'
-var applicationInsightsName = '${projectName}-website'
-var sqlServerName = '${projectName}-website-${resourceNameSuffix}'
-var sqlDatabaseName = '${projectName}Db'
+var environmentAbbreviation = environmentConfigurationMap[environmentType].environmentAbbreviation
+var keyVaultName = 'kv-${projectName}-${environmentAbbreviation}'
+var appServiceAppName = 'as-${projectName}-${resourceNameSuffix}-${environmentAbbreviation}'
+var appServicePlanName = 'plan-${projectName}-${environmentAbbreviation}'
+var logAnalyticsWorkspaceName = 'log-${projectName}-${environmentAbbreviation}'
+var applicationInsightsName = 'appi-${projectName}-${environmentAbbreviation}'
+var sqlServerName = 'sql-${projectName}-${resourceNameSuffix}-${environmentAbbreviation}'
+var sqlDatabaseName = '${projectName}-${environmentAbbreviation}'
 
 // Define the connection string to access Azure SQL.
 var sqlDatabaseConnectionString = 'Server=tcp:${sqlServer.properties.fullyQualifiedDomainName},1433;Initial Catalog=${sqlDatabase.name};Persist Security Info=False;User ID=${sqlServerAdministratorLogin};Password=${sqlServerAdministratorLoginPassword};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
@@ -37,6 +38,7 @@ var sqlDatabaseConnectionString = 'Server=tcp:${sqlServer.properties.fullyQualif
 // Define the SKUs for each component based on the environment type.
 var environmentConfigurationMap = {
   Production: {
+    environmentAbbreviation: 'prod'
     appServicePlan: {
       sku: {
         name: 'S1'
@@ -56,6 +58,7 @@ var environmentConfigurationMap = {
     }
   }
   Test: {
+    environmentAbbreviation: 'test'
     appServicePlan: {
       sku: {
         name: 'B1'
@@ -170,7 +173,7 @@ resource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
 }
 
 // resource certificate 'Microsoft.Web/certificates@2022-03-01' = {
-//   name: 'CleanArchitectureBlazor-website-certificate'
+//   name: 'cert-CaBlazor'
 //   location:  location
 //   properties: {
 //     canonicalName: appServiceApp.properties.defaultHostName
