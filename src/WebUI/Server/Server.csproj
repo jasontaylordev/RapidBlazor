@@ -4,8 +4,8 @@
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>CleanArchitectureBlazor.WebUI.Server</RootNamespace>
-        <AssemblyName>CleanArchitectureBlazor.WebUI.Server</AssemblyName>
+        <RootNamespace>CleanArchitecture.WebUI.Server</RootNamespace>
+        <AssemblyName>CleanArchitecture.WebUI.Server</AssemblyName>
         <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
     </PropertyGroup>
 
@@ -47,7 +47,7 @@
     </Target>
 
     <ItemGroup>
-        <InternalsVisibleTo Include="CleanArchitectureBlazor.Application.SubcutaneousTests" />
+        <InternalsVisibleTo Include="CleanArchitecture.Application.SubcutaneousTests" />
     </ItemGroup>
 
 </Project>

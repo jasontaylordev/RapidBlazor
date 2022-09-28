@@ -1,4 +1,4 @@
-﻿using CleanArchitectureBlazor.Domain.Common;
+﻿using CleanArchitecture.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 
 namespace MediatR;

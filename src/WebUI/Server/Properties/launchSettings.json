@@ -8,7 +8,7 @@
       }
     },
     "profiles": {
-      "CleanArchitectureBlazor.WebUI.Server": {
+      "CleanArchitecture.WebUI.Server": {
         "commandName": "Project",
         "dotnetRunMessages": true,
         "launchBrowser": true,

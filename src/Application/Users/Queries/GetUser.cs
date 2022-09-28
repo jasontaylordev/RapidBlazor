@@ -1,7 +1,7 @@
-﻿using CleanArchitectureBlazor.Application.Common.Services.Identity;
-using CleanArchitectureBlazor.WebUI.Shared.AccessControl;
+﻿using CleanArchitecture.Application.Common.Services.Identity;
+using CleanArchitecture.WebUI.Shared.AccessControl;
 
-namespace CleanArchitectureBlazor.Application.Users.Queries;
+namespace CleanArchitecture.Application.Users.Queries;
 
 public record GetUserQuery(string Id): IRequest<UserDetailsVm>;
 

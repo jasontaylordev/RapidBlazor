@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace CleanArchitectureBlazor.Infrastructure.Data.Migrations
+namespace CleanArchitecture.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
     public partial class Todo : Migration

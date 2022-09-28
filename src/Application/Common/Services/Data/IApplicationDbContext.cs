@@ -1,4 +1,4 @@
-﻿namespace CleanArchitectureBlazor.Application.Common.Services.Data;
+﻿namespace CleanArchitecture.Application.Common.Services.Data;
 
 public interface IApplicationDbContext
 {

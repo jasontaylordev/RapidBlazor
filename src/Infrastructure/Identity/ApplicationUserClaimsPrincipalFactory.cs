@@ -1,11 +1,11 @@
-﻿using CleanArchitectureBlazor.WebUI.Shared.Authorization;
+﻿using CleanArchitecture.WebUI.Shared.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System.Data;
 using System.Security.Claims;
 
-namespace CleanArchitectureBlazor.Infrastructure.Identity;
+namespace CleanArchitecture.Infrastructure.Identity;
 
 public class ApplicationUserClaimsPrincipalFactory : UserClaimsPrincipalFactory<ApplicationUser, ApplicationRole>
 {

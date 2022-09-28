@@ -1,10 +1,10 @@
-﻿using CleanArchitectureBlazor.Domain.Entities;
-using CleanArchitectureBlazor.Infrastructure.Identity;
-using CleanArchitectureBlazor.WebUI.Shared.Authorization;
+﻿using CleanArchitecture.Domain.Entities;
+using CleanArchitecture.Infrastructure.Identity;
+using CleanArchitecture.WebUI.Shared.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchitectureBlazor.Infrastructure.Data;
+namespace CleanArchitecture.Infrastructure.Data;
 
 public class ApplicationDbContextInitialiser
 {

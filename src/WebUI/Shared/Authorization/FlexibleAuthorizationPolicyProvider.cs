@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
 
-namespace CleanArchitectureBlazor.WebUI.Shared.Authorization;
+namespace CleanArchitecture.WebUI.Shared.Authorization;
 
 public class FlexibleAuthorizationPolicyProvider : DefaultAuthorizationPolicyProvider
 {

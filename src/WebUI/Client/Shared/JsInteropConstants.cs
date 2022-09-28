@@ -1,4 +1,4 @@
-﻿namespace CleanArchitectureBlazor.WebUI.Client.Shared;
+﻿namespace CleanArchitecture.WebUI.Client.Shared;
 
 public static class JsInteropConstants
 {

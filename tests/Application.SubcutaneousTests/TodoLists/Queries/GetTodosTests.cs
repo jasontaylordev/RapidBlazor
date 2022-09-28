@@ -1,8 +1,8 @@
-﻿using CleanArchitectureBlazor.Application.TodoLists.Queries;
-using CleanArchitectureBlazor.Domain.Entities;
-using CleanArchitectureBlazor.Domain.ValueObjects;
+﻿using CleanArchitecture.Application.TodoLists.Queries;
+using CleanArchitecture.Domain.Entities;
+using CleanArchitecture.Domain.ValueObjects;
 
-namespace CleanArchitectureBlazor.Application.SubcutaneousTests.TodoLists.Queries;
+namespace CleanArchitecture.Application.SubcutaneousTests.TodoLists.Queries;
 
 using static Testing;
 

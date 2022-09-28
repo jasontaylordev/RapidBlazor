@@ -35,7 +35,7 @@ jobs:
       run: |
         dotnet test --no-build --no-restore --configuration Release --filter "FullyQualifiedName!~AcceptanceTests"
       env:
-        ConnectionStrings__DefaultConnection: Server=.;Database=CleanArchitectureBlazorDb-Test;User=sa;Password=Your_password123;MultipleActiveResultSets=true;Encrypt=false;
+        ConnectionStrings__DefaultConnection: Server=.;Database=CleanArchitectureDb-Test;User=sa;Password=Your_password123;MultipleActiveResultSets=true;Encrypt=false;
 
     - name: Publish website
       run: |

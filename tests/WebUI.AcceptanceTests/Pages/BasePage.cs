@@ -1,6 +1,6 @@
-﻿using CleanArchitectureBlazor.WebUI.AcceptanceTests;
+﻿using CleanArchitecture.WebUI.AcceptanceTests;
 
-namespace CleanArchitectureBlazor.WebUI.AcceptanceTests.Pages;
+namespace CleanArchitecture.WebUI.AcceptanceTests.Pages;
 
 public abstract class BasePage
 {

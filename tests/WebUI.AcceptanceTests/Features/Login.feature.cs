@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace CleanArchitectureBlazor.WebUI.AcceptanceTests.Features
+namespace CleanArchitecture.WebUI.AcceptanceTests.Features
 {
     using TechTalk.SpecFlow;
     using System;

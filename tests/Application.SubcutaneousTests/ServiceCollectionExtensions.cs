@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace CleanArchitectureBlazor.Application.SubcutaneousTests;
+namespace CleanArchitecture.Application.SubcutaneousTests;
 
 public static class ServiceCollectionExtensions
 {

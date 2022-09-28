@@ -1,8 +1,8 @@
-﻿using CleanArchitectureBlazor.Domain.Enums;
-using CleanArchitectureBlazor.Domain.Events;
-using CleanArchitectureBlazor.WebUI.Shared.TodoItems;
+﻿using CleanArchitecture.Domain.Enums;
+using CleanArchitecture.Domain.Events;
+using CleanArchitecture.WebUI.Shared.TodoItems;
 
-namespace CleanArchitectureBlazor.Application.TodoItems.Commands;
+namespace CleanArchitecture.Application.TodoItems.Commands;
 
 public record UpdateTodoItemCommand(UpdateTodoItemRequest Item) : IRequest;
 

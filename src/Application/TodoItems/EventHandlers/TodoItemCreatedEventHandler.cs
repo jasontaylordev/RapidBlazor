@@ -1,4 +1,4 @@
-﻿using CleanArchitectureBlazor.Domain.Events;
+﻿using CleanArchitecture.Domain.Events;
 
 namespace CleanArchitecture.Application.TodoItems.EventHandlers;
 
@@ -13,7 +13,7 @@ public class TodoItemCreatedEventHandler : INotificationHandler<TodoItemCreatedE
 
     public Task Handle(TodoItemCreatedEvent notification, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("CleanArchitectureBlazor Domain Event: {DomainEvent}", notification.GetType().Name);
+        _logger.LogInformation("CleanArchitecture Domain Event: {DomainEvent}", notification.GetType().Name);
 
         return Task.CompletedTask;
     }

@@ -1,7 +1,7 @@
-﻿using CleanArchitectureBlazor.Application.Common.Services.Identity;
+﻿using CleanArchitecture.Application.Common.Services.Identity;
 using MediatR.Pipeline;
 
-namespace CleanArchitectureBlazor.Application.Common.Behaviours;
+namespace CleanArchitecture.Application.Common.Behaviours;
 
 public class LoggingBehaviour<TRequest>
     : IRequestPreProcessor<TRequest> where TRequest : notnull
@@ -32,7 +32,7 @@ public class LoggingBehaviour<TRequest>
             userName = await _identityService.GetUserNameAsync(userId);
         }
 
-        _logger.LogInformation("CleanArchitectureBlazor Request: {Name} {@UserId} {@UserName} {@Request}",
+        _logger.LogInformation("CleanArchitecture Request: {Name} {@UserId} {@UserName} {@Request}",
             requestName, userId, userName, request);
     }
 }

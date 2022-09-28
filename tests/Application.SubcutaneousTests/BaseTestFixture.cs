@@ -1,4 +1,4 @@
-﻿namespace CleanArchitectureBlazor.Application.SubcutaneousTests;
+﻿namespace CleanArchitecture.Application.SubcutaneousTests;
 
 using static Testing;
 

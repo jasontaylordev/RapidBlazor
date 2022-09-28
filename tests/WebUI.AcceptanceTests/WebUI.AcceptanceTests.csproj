@@ -4,8 +4,8 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>CleanArchitectureBlazor.WebUI.AcceptanceTests</RootNamespace>
-        <AssemblyName>CleanArchitectureBlazor.WebUI.AcceptanceTests</AssemblyName>
+        <RootNamespace>CleanArchitecture.WebUI.AcceptanceTests</RootNamespace>
+        <AssemblyName>CleanArchitecture.WebUI.AcceptanceTests</AssemblyName>
 
         <IsPackable>false</IsPackable>
     </PropertyGroup>

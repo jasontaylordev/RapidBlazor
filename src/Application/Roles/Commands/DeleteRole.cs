@@ -1,6 +1,6 @@
-﻿using CleanArchitectureBlazor.Application.Common.Services.Identity;
+﻿using CleanArchitecture.Application.Common.Services.Identity;
 
-namespace CleanArchitectureBlazor.Application.Roles.Commands;
+namespace CleanArchitecture.Application.Roles.Commands;
 
 public record DeleteRoleCommand(string RoleId) : IRequest;
 

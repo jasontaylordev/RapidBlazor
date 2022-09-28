@@ -16,7 +16,7 @@
     "language": "C#",
     "type": "project"
   },
-  "sourceName": "CleanArchitectureBlazor",
+  "sourceName": "CleanArchitecture",
   "preferNameDirectory": true,
   "sources": [
     {

@@ -4,8 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <RootNamespace>CleanArchitectureBlazor.Application</RootNamespace>
-    <AssemblyName>CleanArchitectureBlazor.Application</AssemblyName>
+    <RootNamespace>CleanArchitecture.Application</RootNamespace>
+    <AssemblyName>CleanArchitecture.Application</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

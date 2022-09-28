@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 
-namespace CleanArchitectureBlazor.WebUI.Shared.Authorization;
+namespace CleanArchitecture.WebUI.Shared.Authorization;
 
 public class PermissionAuthorizationHandler : AuthorizationHandler<PermissionAuthorizationRequirement>
 {

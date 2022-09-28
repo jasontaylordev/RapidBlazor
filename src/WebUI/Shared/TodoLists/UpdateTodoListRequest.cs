@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace CleanArchitectureBlazor.WebUI.Shared.TodoLists;
+namespace CleanArchitecture.WebUI.Shared.TodoLists;
 
 public class UpdateTodoListRequest
 {

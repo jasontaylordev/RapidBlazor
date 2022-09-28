@@ -4,8 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>CleanArchitectureBlazor.WebUI.Shared</RootNamespace>
-        <AssemblyName>CleanArchitectureBlazor.WebUI.Shared</AssemblyName>
+        <RootNamespace>CleanArchitecture.WebUI.Shared</RootNamespace>
+        <AssemblyName>CleanArchitecture.WebUI.Shared</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

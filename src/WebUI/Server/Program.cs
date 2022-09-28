@@ -1,7 +1,7 @@
-using CleanArchitectureBlazor.Application.Common.Services.Identity;
-using CleanArchitectureBlazor.Infrastructure.Data;
-using CleanArchitectureBlazor.WebUI.Server.Services;
-using CleanArchitectureBlazor.WebUI.Shared.Authorization;
+using CleanArchitecture.Application.Common.Services.Identity;
+using CleanArchitecture.Infrastructure.Data;
+using CleanArchitecture.WebUI.Server.Services;
+using CleanArchitecture.WebUI.Shared.Authorization;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using NSwag;
@@ -28,7 +28,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddOpenApiDocument(configure =>
 {
-    configure.Title = "CleanArchitectureBlazor API";
+    configure.Title = "CleanArchitecture API";
     configure.AddSecurity("JWT", Enumerable.Empty<string>(),
         new OpenApiSecurityScheme
         {

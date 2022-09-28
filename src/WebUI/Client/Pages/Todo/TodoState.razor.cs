@@ -1,8 +1,8 @@
-﻿using CleanArchitectureBlazor.WebUI.Shared.TodoLists;
+﻿using CleanArchitecture.WebUI.Shared.TodoLists;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
-namespace CleanArchitectureBlazor.WebUI.Client.Pages.Todo;
+namespace CleanArchitecture.WebUI.Client.Pages.Todo;
 
 public partial class TodoState
 {

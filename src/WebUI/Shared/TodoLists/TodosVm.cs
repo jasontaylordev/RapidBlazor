@@ -1,6 +1,6 @@
-﻿using CleanArchitectureBlazor.WebUI.Shared.Common;
+﻿using CleanArchitecture.WebUI.Shared.Common;
 
-namespace CleanArchitectureBlazor.WebUI.Shared.TodoLists;
+namespace CleanArchitecture.WebUI.Shared.TodoLists;
 
 public class TodosVm
 {

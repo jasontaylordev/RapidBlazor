@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Results;
 
-namespace CleanArchitectureBlazor.Application.Common.Exceptions;
+namespace CleanArchitecture.Application.Common.Exceptions;
 
 public class ValidationException : Exception
 {

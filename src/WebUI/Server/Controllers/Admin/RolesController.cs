@@ -1,10 +1,10 @@
-﻿using CleanArchitectureBlazor.Application.Roles.Commands;
-using CleanArchitectureBlazor.Application.Roles.Queries;
-using CleanArchitectureBlazor.WebUI.Shared.AccessControl;
-using CleanArchitectureBlazor.WebUI.Shared.Authorization;
+﻿using CleanArchitecture.Application.Roles.Commands;
+using CleanArchitecture.Application.Roles.Queries;
+using CleanArchitecture.WebUI.Shared.AccessControl;
+using CleanArchitecture.WebUI.Shared.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CleanArchitectureBlazor.WebUI.Server.Controllers.Admin;
+namespace CleanArchitecture.WebUI.Server.Controllers.Admin;
 
 [Route("api/Admin/[controller]")]
 public class RolesController : ApiControllerBase

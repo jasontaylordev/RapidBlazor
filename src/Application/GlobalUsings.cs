@@ -1,9 +1,9 @@
 ﻿global using Ardalis.GuardClauses;
 global using AutoMapper;
 global using AutoMapper.QueryableExtensions;
-global using CleanArchitectureBlazor.Application.Common.Services.Data;
-global using CleanArchitectureBlazor.Domain.Entities;
-global using CleanArchitectureBlazor.WebUI.Shared.Common;
+global using CleanArchitecture.Application.Common.Services.Data;
+global using CleanArchitecture.Domain.Entities;
+global using CleanArchitecture.WebUI.Shared.Common;
 global using FluentValidation;
 global using MediatR;
 global using Microsoft.EntityFrameworkCore;

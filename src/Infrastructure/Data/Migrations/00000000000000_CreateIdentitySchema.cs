@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace CleanArchitectureBlazor.Infrastructure.Data.Migrations
+namespace CleanArchitecture.Infrastructure.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

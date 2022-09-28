@@ -1,7 +1,7 @@
-﻿using CleanArchitectureBlazor.Application.Common.Services.Identity;
-using CleanArchitectureBlazor.WebUI.Shared.AccessControl;
+﻿using CleanArchitecture.Application.Common.Services.Identity;
+using CleanArchitecture.WebUI.Shared.AccessControl;
 
-namespace CleanArchitectureBlazor.Application.Users.Commands;
+namespace CleanArchitecture.Application.Users.Commands;
 
 public record UpdateUserCommand(UserDto User) : IRequest;
 

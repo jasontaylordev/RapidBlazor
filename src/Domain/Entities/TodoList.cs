@@ -1,6 +1,6 @@
-﻿using CleanArchitectureBlazor.Domain.Common;
+﻿using CleanArchitecture.Domain.Common;
 
-namespace CleanArchitectureBlazor.Domain.Entities;
+namespace CleanArchitecture.Domain.Entities;
 
 public class TodoList : BaseAuditableEntity
 {

@@ -1,7 +1,7 @@
-﻿using CleanArchitectureBlazor.WebUI.Shared.AccessControl;
+﻿using CleanArchitecture.WebUI.Shared.AccessControl;
 using Microsoft.AspNetCore.Components;
 
-namespace CleanArchitectureBlazor.WebUI.Client.Pages.Admin.Users;
+namespace CleanArchitecture.WebUI.Client.Pages.Admin.Users;
 
 public partial class Edit
 {

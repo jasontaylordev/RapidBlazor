@@ -1,4 +1,4 @@
-﻿namespace CleanArchitectureBlazor.Application.Common.Behaviours;
+﻿namespace CleanArchitecture.Application.Common.Behaviours;
 
 public class UnhandledExceptionBehaviour<TRequest, TResponse>
     : IPipelineBehavior<TRequest, TResponse>
@@ -26,7 +26,7 @@ public class UnhandledExceptionBehaviour<TRequest, TResponse>
 
             _logger.LogError(
                 ex,
-                "CleanArchitectureBlazor Request: Unhandled Exception for Request {Name} {@Request}",
+                "CleanArchitecture Request: Unhandled Exception for Request {Name} {@Request}",
                 requestName,
                 request);
 

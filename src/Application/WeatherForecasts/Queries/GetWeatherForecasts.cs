@@ -1,6 +1,6 @@
-﻿using CleanArchitectureBlazor.WebUI.Shared.WeatherForecasts;
+﻿using CleanArchitecture.WebUI.Shared.WeatherForecasts;
 
-namespace CleanArchitectureBlazor.Application.WeatherForecasts.Queries;
+namespace CleanArchitecture.Application.WeatherForecasts.Queries;
 
 public class GetWeatherForecastsQuery : IRequest<IList<WeatherForecast>>
 {

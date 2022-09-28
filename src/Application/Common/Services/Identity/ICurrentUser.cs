@@ -1,4 +1,4 @@
-﻿namespace CleanArchitectureBlazor.Application.Common.Services.Identity;
+﻿namespace CleanArchitecture.Application.Common.Services.Identity;
 
 public interface ICurrentUser
 {

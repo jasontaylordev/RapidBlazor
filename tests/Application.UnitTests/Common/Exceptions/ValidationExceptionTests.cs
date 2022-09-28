@@ -1,7 +1,7 @@
-﻿using CleanArchitectureBlazor.Application.Common.Exceptions;
+﻿using CleanArchitecture.Application.Common.Exceptions;
 using FluentValidation.Results;
 
-namespace CleanArchitectureBlazor.Application.UnitTests.Common.Exceptions;
+namespace CleanArchitecture.Application.UnitTests.Common.Exceptions;
 
 public class ValidationExceptionTests
 {

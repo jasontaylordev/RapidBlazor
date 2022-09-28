@@ -1,7 +1,7 @@
-﻿using CleanArchitectureBlazor.Domain.Exceptions;
-using CleanArchitectureBlazor.Domain.ValueObjects;
+﻿using CleanArchitecture.Domain.Exceptions;
+using CleanArchitecture.Domain.ValueObjects;
 
-namespace CleanArchitectureBlazor.Domain.UnitTests.ValueObjects;
+namespace CleanArchitecture.Domain.UnitTests.ValueObjects;
 
 public class ColourTests
 {

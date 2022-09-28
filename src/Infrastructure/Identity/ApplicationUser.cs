@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace CleanArchitectureBlazor.Infrastructure.Identity;
+namespace CleanArchitecture.Infrastructure.Identity;
 
 public class ApplicationUser : IdentityUser
 {

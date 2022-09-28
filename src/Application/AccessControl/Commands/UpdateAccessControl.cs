@@ -1,7 +1,7 @@
-﻿using CleanArchitectureBlazor.Application.Common.Services.Identity;
-using CleanArchitectureBlazor.WebUI.Shared.Authorization;
+﻿using CleanArchitecture.Application.Common.Services.Identity;
+using CleanArchitecture.WebUI.Shared.Authorization;
 
-namespace CleanArchitectureBlazor.Application.AccessControl.Commands;
+namespace CleanArchitecture.Application.AccessControl.Commands;
 
 public record UpdateAccessControlCommand(string RoleId, Permissions Permissions): IRequest;
 

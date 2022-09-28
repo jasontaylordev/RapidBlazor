@@ -1,7 +1,7 @@
-﻿using CleanArchitectureBlazor.Domain.Enums;
-using CleanArchitectureBlazor.WebUI.Shared.TodoLists;
+﻿using CleanArchitecture.Domain.Enums;
+using CleanArchitecture.WebUI.Shared.TodoLists;
 
-namespace CleanArchitectureBlazor.Application.TodoLists.Queries;
+namespace CleanArchitecture.Application.TodoLists.Queries;
 
 public record GetTodoListsQuery : IRequest<TodosVm>;
 

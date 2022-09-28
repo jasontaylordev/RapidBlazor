@@ -1,8 +1,8 @@
-﻿using CleanArchitectureBlazor.Application.Common.Services.Data;
-using CleanArchitectureBlazor.Application.Common.Services.Identity;
-using CleanArchitectureBlazor.Infrastructure.Data;
-using CleanArchitectureBlazor.Infrastructure.Data.Interceptors;
-using CleanArchitectureBlazor.Infrastructure.Identity;
+﻿using CleanArchitecture.Application.Common.Services.Data;
+using CleanArchitecture.Application.Common.Services.Identity;
+using CleanArchitecture.Infrastructure.Data;
+using CleanArchitecture.Infrastructure.Data.Interceptors;
+using CleanArchitecture.Infrastructure.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.IdentityModel.Tokens.Jwt;

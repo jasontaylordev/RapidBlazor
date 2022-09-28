@@ -4,8 +4,8 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>CleanArchitectureBlazor.Application.SubcutaneousTests</RootNamespace>
-        <AssemblyName>CleanArchitectureBlazor.Application.SubcutaneousTests</AssemblyName>
+        <RootNamespace>CleanArchitecture.Application.SubcutaneousTests</RootNamespace>
+        <AssemblyName>CleanArchitecture.Application.SubcutaneousTests</AssemblyName>
 
         <IsPackable>false</IsPackable>
     </PropertyGroup>

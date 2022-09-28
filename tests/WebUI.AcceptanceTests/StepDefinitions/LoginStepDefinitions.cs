@@ -1,4 +1,4 @@
-namespace CleanArchitectureBlazor.WebUI.AcceptanceTests.StepDefinitions;
+namespace CleanArchitecture.WebUI.AcceptanceTests.StepDefinitions;
 
 [Binding]
 public sealed class LoginStepDefinitions

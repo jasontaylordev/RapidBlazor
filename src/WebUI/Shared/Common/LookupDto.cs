@@ -1,4 +1,4 @@
-﻿namespace CleanArchitectureBlazor.WebUI.Shared.Common;
+﻿namespace CleanArchitecture.WebUI.Shared.Common;
 
 public class LookupDto
 {

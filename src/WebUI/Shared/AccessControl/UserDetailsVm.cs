@@ -1,4 +1,4 @@
-﻿namespace CleanArchitectureBlazor.WebUI.Shared.AccessControl;
+﻿namespace CleanArchitecture.WebUI.Shared.AccessControl;
 
 public class UserDetailsVm
 {

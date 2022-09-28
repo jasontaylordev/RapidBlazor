@@ -1,10 +1,10 @@
-﻿using CleanArchitectureBlazor.WebUI.Shared.TodoItems;
-using CleanArchitectureBlazor.WebUI.Shared.TodoLists;
-using CleanArchitectureBlazor.WebUI.Client.Shared;
+﻿using CleanArchitecture.WebUI.Shared.TodoItems;
+using CleanArchitecture.WebUI.Shared.TodoLists;
+using CleanArchitecture.WebUI.Client.Shared;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
-namespace CleanArchitectureBlazor.WebUI.Client.Pages.Todo;
+namespace CleanArchitecture.WebUI.Client.Pages.Todo;
 
 public partial class TodoItems
 {

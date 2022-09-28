@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Respawn;
-using CleanArchitectureBlazor.Infrastructure.Identity;
-using CleanArchitectureBlazor.Infrastructure.Data;
+using CleanArchitecture.Infrastructure.Identity;
+using CleanArchitecture.Infrastructure.Data;
 using Respawn.Graph;
 
-namespace CleanArchitectureBlazor.Application.SubcutaneousTests;
+namespace CleanArchitecture.Application.SubcutaneousTests;
 
 [SetUpFixture]
 public partial class Testing

@@ -1,7 +1,7 @@
-﻿using CleanArchitectureBlazor.Application.Common.Services.Identity;
-using CleanArchitectureBlazor.WebUI.Shared.AccessControl;
+﻿using CleanArchitecture.Application.Common.Services.Identity;
+using CleanArchitecture.WebUI.Shared.AccessControl;
 
-namespace CleanArchitectureBlazor.Application.Roles.Commands;
+namespace CleanArchitecture.Application.Roles.Commands;
 
 public record CreateRoleCommand(RoleDto Role) : IRequest;
 

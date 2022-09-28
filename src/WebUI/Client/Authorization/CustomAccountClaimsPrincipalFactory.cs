@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Authentication.Internal;
 using System.Security.Claims;
 using System.Text.Json;
 
-namespace CleanArchitectureBlazor.WebUI.Client.Authorization;
+namespace CleanArchitecture.WebUI.Client.Authorization;
 
 public class CustomAccountClaimsPrincipalFactory : AccountClaimsPrincipalFactory<RemoteUserAccount>
 {

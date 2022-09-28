@@ -1,6 +1,6 @@
-using CleanArchitectureBlazor.WebUI.Client;
-using CleanArchitectureBlazor.WebUI.Client.Authorization;
-using CleanArchitectureBlazor.WebUI.Shared.Authorization;
+using CleanArchitecture.WebUI.Client;
+using CleanArchitecture.WebUI.Client.Authorization;
+using CleanArchitecture.WebUI.Shared.Authorization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
@@ -11,11 +11,11 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
-builder.Services.AddHttpClient("CleanArchitectureBlazor.WebUI.ServerAPI", client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))
+builder.Services.AddHttpClient("CleanArchitecture.WebUI.ServerAPI", client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))
     .AddHttpMessageHandler<BaseAddressAuthorizationMessageHandler>();
 
 // Supply HttpClient instances that include access tokens when making requests to the server project
-builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("CleanArchitectureBlazor.WebUI.ServerAPI"));
+builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("CleanArchitecture.WebUI.ServerAPI"));
 
 builder.Services
     .AddApiAuthorization()

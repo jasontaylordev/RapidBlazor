@@ -1,7 +1,7 @@
-﻿using CleanArchitectureBlazor.Domain.Common;
-using CleanArchitectureBlazor.Domain.Exceptions;
+﻿using CleanArchitecture.Domain.Common;
+using CleanArchitecture.Domain.Exceptions;
 
-namespace CleanArchitectureBlazor.Domain.ValueObjects;
+namespace CleanArchitecture.Domain.ValueObjects;
 
 public class Colour : ValueObject
 {

@@ -1,8 +1,8 @@
-﻿using CleanArchitectureBlazor.Domain.Entities;
+﻿using CleanArchitecture.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CleanArchitectureBlazor.Infrastructure.Data.Configurations;
+namespace CleanArchitecture.Infrastructure.Data.Configurations;
 
 public class TodoListConfiguration : IEntityTypeConfiguration<TodoList>
 {

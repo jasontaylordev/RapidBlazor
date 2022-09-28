@@ -1,7 +1,7 @@
-﻿using CleanArchitectureBlazor.Application.Common.Services.Identity;
+﻿using CleanArchitecture.Application.Common.Services.Identity;
 using System.Security.Claims;
 
-namespace CleanArchitectureBlazor.WebUI.Server.Services;
+namespace CleanArchitecture.WebUI.Server.Services;
 
 public class CurrentUser : ICurrentUser
 {

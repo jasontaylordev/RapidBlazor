@@ -1,7 +1,7 @@
-﻿using CleanArchitectureBlazor.WebUI.Shared.Authorization;
+﻿using CleanArchitecture.WebUI.Shared.Authorization;
 using Microsoft.AspNetCore.Identity;
 
-namespace CleanArchitectureBlazor.Infrastructure.Identity;
+namespace CleanArchitecture.Infrastructure.Identity;
 
 public class ApplicationRole : IdentityRole
 {

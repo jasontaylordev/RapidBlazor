@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using CleanArchitectureBlazor.Application.Common.Services.Data;
-using CleanArchitectureBlazor.Domain.Entities;
-using CleanArchitectureBlazor.WebUI.Shared.TodoLists;
+using CleanArchitecture.Application.Common.Services.Data;
+using CleanArchitecture.Domain.Entities;
+using CleanArchitecture.WebUI.Shared.TodoLists;
 using System.Runtime.Serialization;
 
-namespace CleanArchitectureBlazor.Application.UnitTests.Common.Mappings;
+namespace CleanArchitecture.Application.UnitTests.Common.Mappings;
 
 public class MappingTests
 {

@@ -1,9 +1,9 @@
-﻿using CleanArchitectureBlazor.Domain.Common;
-using CleanArchitectureBlazor.Application.Common.Services.Identity;
+﻿using CleanArchitecture.Domain.Common;
+using CleanArchitecture.Application.Common.Services.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
-namespace CleanArchitectureBlazor.Infrastructure.Data.Interceptors;
+namespace CleanArchitecture.Infrastructure.Data.Interceptors;
 
 public class AuditableEntitySaveChangesInterceptor : SaveChangesInterceptor
 {

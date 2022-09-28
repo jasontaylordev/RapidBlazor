@@ -1,7 +1,7 @@
 ﻿using ValidationException
-    = CleanArchitectureBlazor.Application.Common.Exceptions.ValidationException;
+    = CleanArchitecture.Application.Common.Exceptions.ValidationException;
 
-namespace CleanArchitectureBlazor.Application.Common.Behaviours;
+namespace CleanArchitecture.Application.Common.Behaviours;
 
 public class ValidationBehavior<TRequest, TResponse>
     : IPipelineBehavior<TRequest, TResponse>

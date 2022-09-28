@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 
-namespace CleanArchitectureBlazor.WebUI.Client.Shared;
+namespace CleanArchitecture.WebUI.Client.Shared;
 
 public class CustomValidation : ComponentBase
 {

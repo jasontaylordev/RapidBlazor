@@ -1,6 +1,6 @@
-﻿using CleanArchitectureBlazor.WebUI.Shared.Authorization;
+﻿using CleanArchitecture.WebUI.Shared.Authorization;
 
-namespace CleanArchitectureBlazor.WebUI.Shared.AccessControl;
+namespace CleanArchitecture.WebUI.Shared.AccessControl;
 
 public class RoleDto
 {

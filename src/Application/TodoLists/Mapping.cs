@@ -1,6 +1,6 @@
-﻿using CleanArchitectureBlazor.WebUI.Shared.TodoLists;
+﻿using CleanArchitecture.WebUI.Shared.TodoLists;
 
-namespace CleanArchitectureBlazor.Application.TodoLists;
+namespace CleanArchitecture.Application.TodoLists;
 
 public class Mapping : Profile
 {

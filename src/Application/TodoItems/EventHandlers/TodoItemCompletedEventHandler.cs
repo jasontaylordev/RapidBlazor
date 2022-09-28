@@ -1,4 +1,4 @@
-﻿using CleanArchitectureBlazor.Domain.Events;
+﻿using CleanArchitecture.Domain.Events;
 
 namespace CleanArchitecture.Application.TodoItems.EventHandlers;
 

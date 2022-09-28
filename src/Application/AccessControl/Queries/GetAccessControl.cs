@@ -1,8 +1,8 @@
-﻿using CleanArchitectureBlazor.Application.Common.Services.Identity;
-using CleanArchitectureBlazor.WebUI.Shared.AccessControl;
-using CleanArchitectureBlazor.WebUI.Shared.Authorization;
+﻿using CleanArchitecture.Application.Common.Services.Identity;
+using CleanArchitecture.WebUI.Shared.AccessControl;
+using CleanArchitecture.WebUI.Shared.Authorization;
 
-namespace CleanArchitectureBlazor.Application.AccessControl.Queries;
+namespace CleanArchitecture.Application.AccessControl.Queries;
 
 public record GetAccessControlQuery() : IRequest<AccessControlVm>;
 
