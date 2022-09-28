@@ -23,7 +23,7 @@ jobs:
     needs: [build, lint]
     with:
       environmentType: Test
-      resourceGroupName: CaBlazorTest
+      resourceGroupName: CleanArchitectureTest
       sqlServerAdministratorLogin: SqlAdmin
     secrets:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID_TEST }}
