@@ -19,10 +19,6 @@ param sqlServerAdministratorLogin string
 @description('The administrator login password for the SQL server.')
 param sqlServerAdministratorLoginPassword string
 
-@secure()
-@description('The service principal object id')
-param servicePrincipalObjectId string
-
 @description('The name of the project.')
 param projectName string = 'blazor'
 
@@ -173,21 +169,21 @@ resource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
   }
 }
 
-resource certificate 'Microsoft.Web/certificates@2022-03-01' = {
-  name: 'blazor-website-certificate'
-  location:  location
-  properties: {
-    canonicalName: appServiceApp.properties.defaultHostName
-    domainValidationMethod: 'http-token'
-    serverFarmId: resourceId('Microsoft.Web/serverfarms', appServicePlanName)
-  }
-}
+// resource certificate 'Microsoft.Web/certificates@2022-03-01' = {
+//   name: 'blazor-website-certificate'
+//   location:  location
+//   properties: {
+//     canonicalName: appServiceApp.properties.defaultHostName
+//     domainValidationMethod: 'http-token'
+//     serverFarmId: resourceId('Microsoft.Web/serverfarms', appServicePlanName)
+//   }
+// }
 
 resource appServiceAppConfig 'Microsoft.Web/sites/config@2022-03-01' = {
   name: 'appsettings'
   parent: appServiceApp
   properties: {
-    WEBSITE_LOAD_CERTIFICATES: certificate.properties.thumbprint
+    // WEBSITE_LOAD_CERTIFICATES: certificate.properties.thumbprint
     ApplicationInsights__InstrumentationKey: applicationInsights.properties.InstrumentationKey
     ConnectionStrings__DefaultConnection: sqlDatabaseConnectionString
     ApplicationInsights__ConnectionString: applicationInsights.properties.ConnectionString
