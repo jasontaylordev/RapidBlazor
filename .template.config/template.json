@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "JasonTaylorDev",
+  "classifications": [
+    "Web",
+    "Blazor",
+    "WebAssembly",
+    "Clean Architecture"
+  ],
+  "name": "Clean Architecture Blazor Solution",
+  "description":  "This is a solution template for creating a Blazor WebAssembly application hosted on ASP.NET Core 6 and following the principles of Clean Architecture.",
+  "identity": "JasonTaylorDev.CleanArchitectureBlazor.Solution.CSharp",
+  "groupIdentity": "JasonTaylorDev.CleanArchitectureBlazor",
+  "shortName": "ca-blazorwasm-sln",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "CleanArchitectureBlazor",
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "source": "./",
+      "target": "./",
+      "exclude": [
+        ".github/workflows/package.yml",
+        ".template.config/**/*",
+        ".vs/**/*",
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        "**/*.filelist",
+        "**/*.user",
+        "**/*.lock.json",
+        "**/.git/**",
+        "*.nuspec",
+        "README.md"
+      ]
+    }
+  ]
+}

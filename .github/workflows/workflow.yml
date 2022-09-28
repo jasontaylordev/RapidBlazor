@@ -23,11 +23,10 @@ jobs:
     needs: [build, lint]
     with:
       environmentType: Test
-      resourceGroupName: BlazorWebsiteTestNew
-      sqlServerAdministratorLogin: BlazorAdmin
+      resourceGroupName: CleanArchitectureBlazorTest
+      sqlServerAdministratorLogin: SqlAdmin
     secrets:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID_TEST }}
       AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      AZURE_SP_ID: ${{ secrets.AZURE_SP_ID_TEST }}
-      sqlServerAdministratorLoginPassword: ${{ secrets.SQL_SERVER_ADMINISTRATOR_LOGIN_PASSWORD_TEST }}
+      SQL_SERVER_ADMINISTRATOR_LOGIN_PASSWORD: ${{ secrets.SQL_SERVER_ADMINISTRATOR_LOGIN_PASSWORD_TEST }}

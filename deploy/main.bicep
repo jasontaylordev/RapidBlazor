@@ -20,7 +20,7 @@ param sqlServerAdministratorLogin string
 param sqlServerAdministratorLoginPassword string
 
 @description('The name of the project.')
-param projectName string = 'blazor'
+param projectName string = 'CleanArchitectureBlazor'
 
 // Define the names for resources.
 var keyVaultName = '${projectName}-keyvault'
@@ -170,7 +170,7 @@ resource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
 }
 
 // resource certificate 'Microsoft.Web/certificates@2022-03-01' = {
-//   name: 'blazor-website-certificate'
+//   name: 'CleanArchitectureBlazor-website-certificate'
 //   location:  location
 //   properties: {
 //     canonicalName: appServiceApp.properties.defaultHostName

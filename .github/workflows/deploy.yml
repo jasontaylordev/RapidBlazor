@@ -19,9 +19,7 @@ on:
         required: true
       AZURE_SUBSCRIPTION_ID:
         required: true
-      AZURE_SP_ID:
-        required: true
-      sqlServerAdministratorLoginPassword:
+      SQL_SERVER_ADMINISTRATOR_LOGIN_PASSWORD:
         required: true
 
 permissions:
@@ -49,7 +47,7 @@ jobs:
          parameters: >
            environmentType=${{ inputs.environmentType }}
            sqlServerAdministratorLogin=${{ inputs.sqlServerAdministratorLogin }}
-           sqlServerAdministratorLoginPassword=${{ secrets.sqlServerAdministratorLoginPassword }}
+           sqlServerAdministratorLoginPassword=${{ secrets.SQL_SERVER_ADMINISTRATOR_LOGIN_PASSWORD }}
          deploymentMode: Validate
      - if: inputs.environmentType == 'Production'
        uses: azure/arm-deploy@v1
@@ -61,7 +59,7 @@ jobs:
          parameters: >
            environmentType=${{ inputs.environmentType }}
            sqlServerAdministratorLogin=${{ inputs.sqlServerAdministratorLogin }}
-           sqlServerAdministratorLoginPassword=${{ secrets.sqlServerAdministratorLoginPassword }}
+           sqlServerAdministratorLoginPassword=${{ secrets.SQL_SERVER_ADMINISTRATOR_LOGIN_PASSWORD }}
          additionalArguments: --what-if
  
   deploy:
@@ -92,7 +90,7 @@ jobs:
         parameters: >
            environmentType=${{ inputs.environmentType }}
            sqlServerAdministratorLogin=${{ inputs.sqlServerAdministratorLogin }}
-           sqlServerAdministratorLoginPassword=${{ secrets.sqlServerAdministratorLoginPassword }}
+           sqlServerAdministratorLoginPassword=${{ secrets.SQL_SERVER_ADMINISTRATOR_LOGIN_PASSWORD }}
 
   deploy-website:
     needs: deploy
