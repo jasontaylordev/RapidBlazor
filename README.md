@@ -1,11 +1,13 @@
-# Clean Architecture Blazor
+# Clean Architecture Solution Template for Blazor WebAssembly
 
-[![Nuget](https://img.shields.io/nuget/v/JasonTaylorDev.CleanArchitectureBlazor?label=NuGet)](https://www.nuget.org/packages/JasonTaylorDev.CleanArchitectureBlazor)
-[![Nuget](https://img.shields.io/nuget/dt/JasonTaylorDev.CleanArchitectureBlazor?label=Downloads)](https://www.nuget.org/packages/JasonTaylorDev.CleanArchitectureBlazor)
+[![Nuget](https://img.shields.io/nuget/v/JasonTaylorDev.CleanArchitectureBlazor?label=NuGet&)](https://www.nuget.org/packages/JasonTaylorDev.CleanArchitectureBlazor)
+[![Nuget](https://img.shields.io/nuget/dt/JasonTaylorDev.CleanArchitectureBlazor?label=Downloads&)](https://www.nuget.org/packages/JasonTaylorDev.CleanArchitectureBlazor)
 [![Discord](https://img.shields.io/discord/893301913662148658?label=Discord)](https://discord.gg/p9YtBjfgGe)
 ![Twitter Follow](https://img.shields.io/twitter/follow/jasontaylordev?label=Follow&style=social)
 
 This is a solution template for creating a Blazor WebAssembly application hosted on ASP.NET Core 6 and following the principles of Clean Architecture.
+
+Please consider this a preview, I am still actively working on this template. If you spot a problem or would like to suggest an improvement, please let me know by [creating an issue](https://github.com/jasontaylordev/CleanArchitectureBlazor/issues).
 
 If you find this project useful, please give it a star. Thanks! ⭐
 
