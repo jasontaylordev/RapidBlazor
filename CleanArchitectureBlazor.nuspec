@@ -3,7 +3,7 @@
   <metadata>
 
     <id>JasonTaylorDev.CleanArchitectureBlazor</id>
-    <version>0.8.0</version>
+    <version>0.8.1</version>
     <title>Clean Architecture Blazor Solution Template</title>
     <authors>JasonTaylorDev</authors>
     <description>Clean Architecture Blazor Solution Template for and .NET 6.</description>
@@ -11,7 +11,7 @@
       This is a solution template for creating a Blazor WebAssembly application hosted on ASP.NET Core 6 and following the principles of Clean Architecture.
     </summary>
     <releaseNotes>
-      Initial release.
+      Initial version.
     </releaseNotes>
 
     <projectUrl>https://github.com/JasonTaylorDev/CleanArchitectureBlazor</projectUrl>
