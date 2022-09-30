@@ -51,7 +51,7 @@ dotnet ef migrations add "Initial" --startup-project ..\WebUI\Server
 Review the [Entity Framework Core tools reference - .NET Core CLI | Microsoft Docs](https://learn.microsoft.com/en-us/ef/core/cli/dotnet) to learn more.
 
 ## Deploy
-The project can easily be deployed to Azure using the included GitHub Actions workflows and Bicep templates.
+The project can easily be deployed to Azure using the included GitHub Actions workflows and Bicep templates. Review the [Deployment instructions](https://github.com/jasontaylordev/CleanArchitectureBlazor/wiki/Deploy) to learn how.
 
 ## Resources
 The following resources are highly recommended:
