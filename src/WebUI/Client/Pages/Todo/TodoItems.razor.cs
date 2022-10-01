@@ -70,11 +70,13 @@ public partial class TodoItems
             }
             else
             {
-                await State.TodoItemsClient.PostTodoItemAsync(new CreateTodoItemRequest
+                var itemId = await State.TodoItemsClient.PostTodoItemAsync(new CreateTodoItemRequest
                 {
                     ListId = SelectedItem.ListId,
                     Title = SelectedItem.Title
                 });
+
+                SelectedItem.Id = itemId;
             }
         }
         else
