@@ -70,13 +70,11 @@ public partial class TodoItems
             }
             else
             {
-                var itemId = await State.TodoItemsClient.PostTodoItemAsync(new CreateTodoItemRequest
+                await State.TodoItemsClient.PostTodoItemAsync(new CreateTodoItemRequest
                 {
                     ListId = SelectedItem.ListId,
                     Title = SelectedItem.Title
                 });
-
-                SelectedItem.Id = itemId;
             }
         }
         else
@@ -98,6 +96,8 @@ public partial class TodoItems
                 });
             }
         }
+
+        SelectedItem = null;
     }
 
     private async Task SaveList()
