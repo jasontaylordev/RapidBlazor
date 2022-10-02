@@ -172,25 +172,17 @@ resource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
   }
 }
 
-// resource certificate 'Microsoft.Web/certificates@2022-03-01' = {
-//   name: 'cert-CaBlazor'
-//   location:  location
-//   properties: {
-//     canonicalName: appServiceApp.properties.defaultHostName
-//     domainValidationMethod: 'http-token'
-//     serverFarmId: resourceId('Microsoft.Web/serverfarms', appServicePlanName)
-//   }
-// }
-
-resource appServiceAppConfig 'Microsoft.Web/sites/config@2022-03-01' = {
-  name: 'appsettings'
-  parent: appServiceApp
-  properties: {
-    // WEBSITE_LOAD_CERTIFICATES: certificate.properties.thumbprint
-    ApplicationInsights__InstrumentationKey: applicationInsights.properties.InstrumentationKey
-    ConnectionStrings__DefaultConnection: sqlDatabaseConnectionString
-    ApplicationInsights__ConnectionString: applicationInsights.properties.ConnectionString
-    KeyVaultUri: keyVault.properties.vaultUri
+module appSettings 'appSettings.bicep' = {
+  name: 'appSettings'
+  params: {
+    appServiceAppName: appServiceAppName
+    defaultAppSettings: {
+      ApplicationInsights__InstrumentationKey: applicationInsights.properties.InstrumentationKey
+      ConnectionStrings__DefaultConnection: sqlDatabaseConnectionString
+      ApplicationInsights__ConnectionString: applicationInsights.properties.ConnectionString
+      KeyVaultUri: keyVault.properties.vaultUri
+    }
+    exitingAppSettings: list(resourceId('Microsoft.Web/sites/config', appServiceApp.name, 'appsettings'), '2022-03-01').properties
   }
 }
 
