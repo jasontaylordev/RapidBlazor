@@ -83,56 +83,8 @@ resource keyVault 'Microsoft.KeyVault/vaults@2019-09-01' = {
   location: location
   properties: {
     enabledForTemplateDeployment: true
-    createMode: 'default'
     tenantId: subscription().tenantId
-    accessPolicies: [
-      {
-        tenantId: subscription().tenantId
-        objectId: '77bbd9e2-ad94-4850-922f-d9590310e295'
-        permissions: {
-          certificates: [
-            'Get'
-            'List'
-            'Update'
-            'Create'
-            'Import'
-            'Delete'
-            'Recover'
-            'Backup'
-            'Restore'
-            'ManageContacts'
-            'ManageIssuers'
-            'GetIssuers'
-            'ListIssuers'
-            'SetIssuers'
-            'DeleteIssuers'
-          ]
-          keys: [
-            'Get'
-            'List'
-            'Update'
-            'Create'
-            'Import'
-            'Delete'
-            'Recover'
-            'Backup'
-            'Restore'
-            'GetRotationPolicy'
-            'SetRotationPolicy'
-            'Rotate'
-          ]
-          secrets: [
-            'Get'
-            'List'
-            'Set'
-            'Delete'
-            'Recover'
-            'Backup'
-            'Restore'
-          ]
-        }
-      }
-    ]
+    accessPolicies: []
     sku: {
       name: 'standard'
       family: 'A'
@@ -178,9 +130,8 @@ module appSettings 'appSettings.bicep' = {
     appServiceAppName: appServiceAppName
     defaultAppSettings: {
       ApplicationInsights__InstrumentationKey: applicationInsights.properties.InstrumentationKey
-      ConnectionStrings__DefaultConnection: sqlDatabaseConnectionString
       ApplicationInsights__ConnectionString: applicationInsights.properties.ConnectionString
-      KeyVaultUri: keyVault.properties.vaultUri
+      KeyVaultName: keyVaultName
     }
     exitingAppSettings: list(resourceId('Microsoft.Web/sites/config', appServiceApp.name, 'appsettings'), '2022-03-01').properties
   }
@@ -200,12 +151,6 @@ resource keyVaultAccessPolicy 'Microsoft.KeyVault/vaults/accessPolicies@2019-09-
           secrets: [
             'List'
             'Get'
-          ]
-          certificates: [
-            'Get'
-            'List'
-            'Create'
-            'Update'
           ]
         }
       }

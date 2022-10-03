@@ -1,3 +1,4 @@
+﻿using Azure.Identity;
 using CleanArchitecture.Application.Common.Services.Identity;
 using CleanArchitecture.Infrastructure.Data;
 using CleanArchitecture.WebUI.Server.Services;
@@ -10,6 +11,15 @@ using NSwag.Generation.Processors.Security;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+// Use key vault if configured
+var keyVaultName = builder.Configuration["KeyVaultName"];
+if (!string.IsNullOrWhiteSpace(keyVaultName))
+{
+    builder.Configuration.AddAzureKeyVault(
+        new Uri($"https://{keyVaultName}.vault.azure.net"),
+        new DefaultAzureCredential());
+}
 
 builder.Services
     .AddApplicationServices()
