@@ -24,7 +24,7 @@ param projectName string = 'CleanArchitecture'
 
 // Define the names for resources.
 var environmentAbbreviation = environmentConfigurationMap[environmentType].environmentAbbreviation
-var keyVaultName = 'kv-${projectName}${environmentAbbreviation}'
+var keyVaultName = 'k-${projectName}-${environmentAbbreviation}'
 var appServiceAppName = 'as-${projectName}-${resourceNameSuffix}-${environmentAbbreviation}'
 var appServicePlanName = 'plan-${projectName}-${environmentAbbreviation}'
 var logAnalyticsWorkspaceName = 'log-${projectName}-${environmentAbbreviation}'
