@@ -1,5 +1,6 @@
 # Clean Architecture Solution Template for Blazor WebAssembly
 
+[![Build & Deploy](https://github.com/jasontaylordev/CleanArchitectureBlazor/actions/workflows/workflow.yml/badge.svg)](https://github.com/jasontaylordev/CleanArchitectureBlazor/actions/workflows/workflow.yml)
 [![Nuget](https://img.shields.io/nuget/v/JasonTaylorDev.CleanArchitectureBlazor?label=NuGet&)](https://www.nuget.org/packages/JasonTaylorDev.CleanArchitectureBlazor)
 [![Nuget](https://img.shields.io/nuget/dt/JasonTaylorDev.CleanArchitectureBlazor?label=Downloads&)](https://www.nuget.org/packages/JasonTaylorDev.CleanArchitectureBlazor)
 [![Discord](https://img.shields.io/discord/893301913662148658?label=Discord)](https://discord.gg/p9YtBjfgGe)
