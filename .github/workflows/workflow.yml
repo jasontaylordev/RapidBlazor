@@ -1,4 +1,4 @@
-name: deploy-website-end-to-end
+name: Build & Deploy
 
 on: 
   push:
