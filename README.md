@@ -24,12 +24,12 @@ dotnet new install JasonTaylorDev.RapidBlazor
 Create a new app:
 
 ```bash
-dotnet new rapid-blazor-sln --output AwesomeBlazor
+dotnet new rapid-blazor-sln --output RapidBlazor21
 ```
 
 Launch the app:
 ```bash
-cd AwesomeBlazor\src\WebUI\Server
+cd RapidBlazor21\src\WebUI\Server
 dotnet run
 ```
 
