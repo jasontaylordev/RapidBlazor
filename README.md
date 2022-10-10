@@ -1,4 +1,4 @@
-# Clean Architecture Solution Template for Blazor WebAssembly
+# Rapid Blazor Template for .NET
 
 [![Nuget](https://img.shields.io/nuget/v/JasonTaylorDev.RapidBlazor?label=NuGet&)](https://www.nuget.org/packages/JasonTaylorDev.RapidBlazor)
 [![Nuget](https://img.shields.io/nuget/dt/JasonTaylorDev.RapidBlazor?label=Downloads&)](https://www.nuget.org/packages/JasonTaylorDev.RapidBlazor)
