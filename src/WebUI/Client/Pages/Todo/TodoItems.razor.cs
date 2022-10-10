@@ -98,6 +98,8 @@ public partial class TodoItems
                 });
             }
         }
+
+        SelectedItem = null;
     }
 
     private async Task SaveList()
