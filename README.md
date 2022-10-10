@@ -1,5 +1,6 @@
 # Rapid Blazor Template for .NET
 
+[![Build+Deploy](https://github.com/jasontaylordev/RapidBlazor/actions/workflows/workflow.yml/badge.svg)](https://github.com/jasontaylordev/RapidBlazor/actions/workflows/workflow.yml)
 [![Nuget](https://img.shields.io/nuget/v/JasonTaylorDev.RapidBlazor?label=NuGet&)](https://www.nuget.org/packages/JasonTaylorDev.RapidBlazor)
 [![Nuget](https://img.shields.io/nuget/dt/JasonTaylorDev.RapidBlazor?label=Downloads&)](https://www.nuget.org/packages/JasonTaylorDev.RapidBlazor)
 [![Discord](https://img.shields.io/discord/893301913662148658?label=Discord)](https://discord.gg/p9YtBjfgGe)
