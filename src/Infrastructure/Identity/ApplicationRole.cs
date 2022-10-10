@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.WebUI.Shared.Authorization;
+﻿using RapidBlazor.WebUI.Shared.Authorization;
 using Microsoft.AspNetCore.Identity;
 
-namespace CleanArchitecture.Infrastructure.Identity;
+namespace RapidBlazor.Infrastructure.Identity;
 
 public class ApplicationRole : IdentityRole
 {

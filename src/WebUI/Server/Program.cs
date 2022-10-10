@@ -1,8 +1,8 @@
 ﻿using Azure.Identity;
-using CleanArchitecture.Application.Common.Services.Identity;
-using CleanArchitecture.Infrastructure.Data;
-using CleanArchitecture.WebUI.Server.Services;
-using CleanArchitecture.WebUI.Shared.Authorization;
+using RapidBlazor.Application.Common.Services.Identity;
+using RapidBlazor.Infrastructure.Data;
+using RapidBlazor.WebUI.Server.Services;
+using RapidBlazor.WebUI.Shared.Authorization;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using NSwag;

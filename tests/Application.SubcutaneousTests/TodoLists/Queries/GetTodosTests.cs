@@ -1,8 +1,8 @@
-﻿using CleanArchitecture.Application.TodoLists.Queries;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Domain.ValueObjects;
+﻿using RapidBlazor.Application.TodoLists.Queries;
+using RapidBlazor.Domain.Entities;
+using RapidBlazor.Domain.ValueObjects;
 
-namespace CleanArchitecture.Application.SubcutaneousTests.TodoLists.Queries;
+namespace RapidBlazor.Application.SubcutaneousTests.TodoLists.Queries;
 
 using static Testing;
 

@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-      - 'CleanArchitectureBlazor.nuspec'
+      - 'RapidBlazor.nuspec'
 jobs:
   publish:
     name: Publish to NuGet.org
@@ -17,7 +17,7 @@ jobs:
           nuget-version: '6.x'
 
       - name: Create the package
-        run: nuget pack CleanArchitectureBlazor.nuspec -NoDefaultExcludes
+        run: nuget pack RapidBlazor.nuspec -NoDefaultExcludes
         
       - name: Publish the package
         run: nuget push *.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}} -SkipDuplicate

@@ -1,6 +1,6 @@
-﻿using CleanArchitecture.WebUI.Shared.TodoLists;
+﻿using RapidBlazor.WebUI.Shared.TodoLists;
 
-namespace CleanArchitecture.Application.TodoLists.Commands;
+namespace RapidBlazor.Application.TodoLists.Commands;
 
 public record CreateTodoListCommand(CreateTodoListRequest List) : IRequest<int>;
 

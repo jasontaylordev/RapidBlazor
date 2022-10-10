@@ -96,10 +96,10 @@
       "operationGenerationMode": "MultipleClientsFromOperationId",
       "additionalNamespaceUsages": [
         "Microsoft.AspNetCore.Mvc",
-        "CleanArchitecture.WebUI.Shared.TodoItems",
-        "CleanArchitecture.WebUI.Shared.TodoLists",
-        "CleanArchitecture.WebUI.Shared.WeatherForecasts",
-        "CleanArchitecture.WebUI.Shared.AccessControl"
+        "RapidBlazor.WebUI.Shared.TodoItems",
+        "RapidBlazor.WebUI.Shared.TodoLists",
+        "RapidBlazor.WebUI.Shared.WeatherForecasts",
+        "RapidBlazor.WebUI.Shared.AccessControl"
       ],
       "additionalContractNamespaceUsages": [],
       "generateOptionalParameters": false,
@@ -113,7 +113,7 @@
       "wrapResponseMethods": [],
       "generateResponseClasses": true,
       "responseClass": "SwaggerResponse",
-      "namespace": "CleanArchitecture.WebUI.Client",
+      "namespace": "RapidBlazor.WebUI.Client",
       "requiredPropertiesMustBeDefined": true,
       "dateType": "System.DateTimeOffset",
       "jsonConverters": null,

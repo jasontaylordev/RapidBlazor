@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Application.Common.Services.Identity;
-using CleanArchitecture.WebUI.Shared.AccessControl;
+﻿using RapidBlazor.Application.Common.Services.Identity;
+using RapidBlazor.WebUI.Shared.AccessControl;
 
-namespace CleanArchitecture.Application.Users.Commands;
+namespace RapidBlazor.Application.Users.Commands;
 
 public record UpdateUserCommand(UserDto User) : IRequest;
 

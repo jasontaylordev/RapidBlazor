@@ -1,6 +1,6 @@
-﻿using CleanArchitecture.WebUI.AcceptanceTests;
+﻿using RapidBlazor.WebUI.AcceptanceTests;
 
-namespace CleanArchitecture.WebUI.AcceptanceTests.Pages;
+namespace RapidBlazor.WebUI.AcceptanceTests.Pages;
 
 public abstract class BasePage
 {

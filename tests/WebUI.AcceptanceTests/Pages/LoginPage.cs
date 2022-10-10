@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.WebUI.AcceptanceTests.Pages;
+﻿namespace RapidBlazor.WebUI.AcceptanceTests.Pages;
 
 public class LoginPage : BasePage
 {

@@ -1,6 +1,6 @@
-using CleanArchitecture.WebUI.Client;
-using CleanArchitecture.WebUI.Client.Authorization;
-using CleanArchitecture.WebUI.Shared.Authorization;
+using RapidBlazor.WebUI.Client;
+using RapidBlazor.WebUI.Client.Authorization;
+using RapidBlazor.WebUI.Shared.Authorization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;

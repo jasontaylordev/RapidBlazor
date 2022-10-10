@@ -1,9 +1,9 @@
-using CleanArchitecture.Application.WeatherForecasts.Queries;
-using CleanArchitecture.WebUI.Shared.WeatherForecasts;
+using RapidBlazor.Application.WeatherForecasts.Queries;
+using RapidBlazor.WebUI.Shared.WeatherForecasts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CleanArchitecture.WebUI.Server.Controllers;
+namespace RapidBlazor.WebUI.Server.Controllers;
 
 [Authorize]
 public class WeatherForecastController : ApiControllerBase

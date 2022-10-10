@@ -1,8 +1,8 @@
-﻿using CleanArchitecture.WebUI.Shared.AccessControl;
-using CleanArchitecture.WebUI.Shared.Authorization;
+﻿using RapidBlazor.WebUI.Shared.AccessControl;
+using RapidBlazor.WebUI.Shared.Authorization;
 using Microsoft.AspNetCore.Components;
 
-namespace CleanArchitecture.WebUI.Client.Pages.Admin.AccessControl;
+namespace RapidBlazor.WebUI.Client.Pages.Admin.AccessControl;
 
 public partial class Index
 {

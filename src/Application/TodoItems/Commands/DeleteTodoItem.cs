@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Application.TodoItems.Commands;
+﻿namespace RapidBlazor.Application.TodoItems.Commands;
 
 public record DeleteTodoItemCommand(int Id) : IRequest;
 

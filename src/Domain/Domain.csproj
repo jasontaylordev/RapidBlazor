@@ -4,8 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-      <RootNamespace>CleanArchitecture.Domain</RootNamespace>
-      <AssemblyName>CleanArchitecture.Domain</AssemblyName>
+      <RootNamespace>RapidBlazor.Domain</RootNamespace>
+      <AssemblyName>RapidBlazor.Domain</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

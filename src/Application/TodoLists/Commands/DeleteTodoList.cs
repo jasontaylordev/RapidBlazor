@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Application.TodoLists.Commands;
+﻿namespace RapidBlazor.Application.TodoLists.Commands;
 
 public record DeleteTodoListCommand(int Id) : IRequest;
 

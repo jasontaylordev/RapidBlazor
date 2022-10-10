@@ -1,8 +1,8 @@
-﻿using CleanArchitecture.Application.TodoItems.Commands;
-using CleanArchitecture.WebUI.Shared.TodoItems;
+﻿using RapidBlazor.Application.TodoItems.Commands;
+using RapidBlazor.WebUI.Shared.TodoItems;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CleanArchitecture.WebUI.Server.Controllers;
+namespace RapidBlazor.WebUI.Server.Controllers;
 
 public class TodoItemsController : ApiControllerBase
 {

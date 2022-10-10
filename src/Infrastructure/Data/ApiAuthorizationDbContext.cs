@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
-namespace CleanArchitecture.Infrastructure.Data;
+namespace RapidBlazor.Infrastructure.Data;
 
 // Based on https://github.com/dotnet/aspnetcore/blob/main/src/Identity/ApiAuthorization.IdentityServer/src/Data/ApiAuthorizationDbContext.cs
 // Customised to add TRole.

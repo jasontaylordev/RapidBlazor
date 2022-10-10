@@ -1,10 +1,10 @@
-﻿using CleanArchitecture.Application.Common.Behaviours;
-using CleanArchitecture.Application.Common.Services.Identity;
-using CleanArchitecture.Application.TodoItems.Commands;
-using CleanArchitecture.WebUI.Shared.TodoItems;
+﻿using RapidBlazor.Application.Common.Behaviours;
+using RapidBlazor.Application.Common.Services.Identity;
+using RapidBlazor.Application.TodoItems.Commands;
+using RapidBlazor.WebUI.Shared.TodoItems;
 using Microsoft.Extensions.Logging;
 
-namespace CleanArchitecture.Application.UnitTests.Common.Behaviours;
+namespace RapidBlazor.Application.UnitTests.Common.Behaviours;
 
 public class RequestLoggerTests
 {

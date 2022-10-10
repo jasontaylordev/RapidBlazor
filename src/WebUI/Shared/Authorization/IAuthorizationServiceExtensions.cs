@@ -1,8 +1,8 @@
-﻿using CleanArchitecture.WebUI.Shared.Authorization;
+﻿using RapidBlazor.WebUI.Shared.Authorization;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 
-namespace CleanArchitecture.WebUI.Shared.Authorization;
+namespace RapidBlazor.WebUI.Shared.Authorization;
 
 public static class IAuthorizationServiceExtensions
 {

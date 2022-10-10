@@ -23,7 +23,7 @@ jobs:
     needs: [build, lint]
     with:
       environmentType: Test
-      resourceGroupName: CleanArchitectureTest
+      resourceGroupName: RapidBlazorTest
       sqlServerAdministratorLogin: SqlAdmin
     secrets:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID_TEST }}
@@ -37,7 +37,7 @@ jobs:
     needs: [build, lint, deploy-test]
     with:
       environmentType: Production
-      resourceGroupName: CleanArchitectureProduction
+      resourceGroupName: RapidBlazorProduction
       sqlServerAdministratorLogin: SqlAdmin
     secrets:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID_PRODUCTION }}

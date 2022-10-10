@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.WebUI.Shared.TodoLists;
+﻿using RapidBlazor.WebUI.Shared.TodoLists;
 using FluentValidation;
 
-namespace CleanArchitecture.WebUI.Shared.TodoItems;
+namespace RapidBlazor.WebUI.Shared.TodoItems;
 
 public class UpdateTodoItemRequest
 {

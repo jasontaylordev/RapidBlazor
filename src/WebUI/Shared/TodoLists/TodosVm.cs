@@ -1,6 +1,6 @@
-﻿using CleanArchitecture.WebUI.Shared.Common;
+﻿using RapidBlazor.WebUI.Shared.Common;
 
-namespace CleanArchitecture.WebUI.Shared.TodoLists;
+namespace RapidBlazor.WebUI.Shared.TodoLists;
 
 public class TodosVm
 {

@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Domain.Common;
-using CleanArchitecture.Domain.Enums;
+﻿using RapidBlazor.Domain.Common;
+using RapidBlazor.Domain.Enums;
 
-namespace CleanArchitecture.Domain.Entities;
+namespace RapidBlazor.Domain.Entities;
 
 public class TodoItem : BaseAuditableEntity
 {

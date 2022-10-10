@@ -4,8 +4,8 @@
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>CleanArchitecture.WebUI.Client</RootNamespace>
-        <AssemblyName>CleanArchitecture.WebUI.Client</AssemblyName>
+        <RootNamespace>RapidBlazor.WebUI.Client</RootNamespace>
+        <AssemblyName>RapidBlazor.WebUI.Client</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>

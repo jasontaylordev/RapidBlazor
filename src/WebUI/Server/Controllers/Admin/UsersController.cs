@@ -1,10 +1,10 @@
-﻿using CleanArchitecture.Application.Users.Commands;
-using CleanArchitecture.Application.Users.Queries;
-using CleanArchitecture.WebUI.Shared.AccessControl;
-using CleanArchitecture.WebUI.Shared.Authorization;
+﻿using RapidBlazor.Application.Users.Commands;
+using RapidBlazor.Application.Users.Queries;
+using RapidBlazor.WebUI.Shared.AccessControl;
+using RapidBlazor.WebUI.Shared.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CleanArchitecture.WebUI.Server.Controllers.Admin;
+namespace RapidBlazor.WebUI.Server.Controllers.Admin;
 
 [Route("api/Admin/[controller]")]
 public class UsersController : ApiControllerBase

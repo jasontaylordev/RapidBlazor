@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Application.Common.Services.Identity;
-using CleanArchitecture.WebUI.Shared.AccessControl;
+﻿using RapidBlazor.Application.Common.Services.Identity;
+using RapidBlazor.WebUI.Shared.AccessControl;
 
-namespace CleanArchitecture.Application.Roles.Queries;
+namespace RapidBlazor.Application.Roles.Queries;
 
 public record GetRolesQuery : IRequest<RolesVm>;
 

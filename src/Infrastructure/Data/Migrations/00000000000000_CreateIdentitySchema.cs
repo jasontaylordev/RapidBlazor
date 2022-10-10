@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace CleanArchitecture.Infrastructure.Data.Migrations
+namespace RapidBlazor.Infrastructure.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

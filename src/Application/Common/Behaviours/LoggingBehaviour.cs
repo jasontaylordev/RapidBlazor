@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Application.Common.Services.Identity;
+﻿using RapidBlazor.Application.Common.Services.Identity;
 using MediatR.Pipeline;
 
-namespace CleanArchitecture.Application.Common.Behaviours;
+namespace RapidBlazor.Application.Common.Behaviours;
 
 public class LoggingBehaviour<TRequest>
     : IRequestPreProcessor<TRequest> where TRequest : notnull

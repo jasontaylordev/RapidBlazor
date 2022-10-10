@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.WebUI.Shared.Authorization;
+﻿using RapidBlazor.WebUI.Shared.Authorization;
 using Microsoft.AspNetCore.Components;
 
-namespace CleanArchitecture.WebUI.Client.Shared;
+namespace RapidBlazor.WebUI.Client.Shared;
 
 public class FlexibleAuthorizeView : Microsoft.AspNetCore.Components.Authorization.AuthorizeView
 {

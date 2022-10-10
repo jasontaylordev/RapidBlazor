@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Domain.Events;
-using CleanArchitecture.WebUI.Shared.TodoItems;
+﻿using RapidBlazor.Domain.Events;
+using RapidBlazor.WebUI.Shared.TodoItems;
 
-namespace CleanArchitecture.Application.TodoItems.Commands;
+namespace RapidBlazor.Application.TodoItems.Commands;
 
 public record CreateTodoItemCommand(CreateTodoItemRequest Item) : IRequest<int>;
 

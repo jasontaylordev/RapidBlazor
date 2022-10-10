@@ -1,11 +1,11 @@
 ﻿using Ardalis.GuardClauses;
-using CleanArchitecture.Application.TodoItems.Commands;
-using CleanArchitecture.Application.TodoLists.Commands;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.WebUI.Shared.TodoItems;
-using CleanArchitecture.WebUI.Shared.TodoLists;
+using RapidBlazor.Application.TodoItems.Commands;
+using RapidBlazor.Application.TodoLists.Commands;
+using RapidBlazor.Domain.Entities;
+using RapidBlazor.WebUI.Shared.TodoItems;
+using RapidBlazor.WebUI.Shared.TodoLists;
 
-namespace CleanArchitecture.Application.SubcutaneousTests.TodoItems.Commands;
+namespace RapidBlazor.Application.SubcutaneousTests.TodoItems.Commands;
 
 using static Testing;
 

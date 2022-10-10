@@ -1,9 +1,9 @@
-﻿using CleanArchitecture.Application.TodoLists.Commands;
-using CleanArchitecture.Application.TodoLists.Queries;
-using CleanArchitecture.WebUI.Shared.TodoLists;
+﻿using RapidBlazor.Application.TodoLists.Commands;
+using RapidBlazor.Application.TodoLists.Queries;
+using RapidBlazor.WebUI.Shared.TodoLists;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CleanArchitecture.WebUI.Server.Controllers;
+namespace RapidBlazor.WebUI.Server.Controllers;
 
 public class TodoListsController : ApiControllerBase
 {

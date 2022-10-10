@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace CleanArchitecture.Infrastructure.Data.Migrations
+namespace RapidBlazor.Infrastructure.Data.Migrations
 {
     public partial class FlexibleAuth : Migration
     {

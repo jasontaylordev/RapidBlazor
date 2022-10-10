@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.WebUI.Shared.Common;
+﻿namespace RapidBlazor.WebUI.Shared.Common;
 
 public class Result
 {

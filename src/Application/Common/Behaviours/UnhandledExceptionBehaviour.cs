@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Application.Common.Behaviours;
+﻿namespace RapidBlazor.Application.Common.Behaviours;
 
 public class UnhandledExceptionBehaviour<TRequest, TResponse>
     : IPipelineBehavior<TRequest, TResponse>

@@ -20,7 +20,7 @@ param sqlServerAdministratorLogin string
 param sqlServerAdministratorLoginPassword string
 
 @description('The name of the project.')
-param projectName string = 'CleanArchitecture'
+param projectName string = 'RapidBlazor'
 
 // Define the names for resources.
 var environmentAbbreviation = environmentConfigurationMap[environmentType].environmentAbbreviation

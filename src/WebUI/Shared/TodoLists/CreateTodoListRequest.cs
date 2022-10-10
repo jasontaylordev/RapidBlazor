@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace CleanArchitecture.WebUI.Shared.TodoLists;
+namespace RapidBlazor.WebUI.Shared.TodoLists;
 
 public class CreateTodoListRequest
 {

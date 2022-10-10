@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.WebUI.Shared.Authorization;
+﻿namespace RapidBlazor.WebUI.Shared.Authorization;
 
 [Flags]
 public enum Permissions

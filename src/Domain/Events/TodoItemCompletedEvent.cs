@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Domain.Common;
-using CleanArchitecture.Domain.Entities;
+﻿using RapidBlazor.Domain.Common;
+using RapidBlazor.Domain.Entities;
 
-namespace CleanArchitecture.Domain.Events;
+namespace RapidBlazor.Domain.Events;
 
 public class TodoItemCompletedEvent : BaseEvent
 {

@@ -1,6 +1,6 @@
-﻿using CleanArchitecture.Domain.Events;
+﻿using RapidBlazor.Domain.Events;
 
-namespace CleanArchitecture.Application.TodoItems.EventHandlers;
+namespace RapidBlazor.Application.TodoItems.EventHandlers;
 
 public class TodoItemCompletedEventHandler : INotificationHandler<TodoItemCompletedEvent>
 {

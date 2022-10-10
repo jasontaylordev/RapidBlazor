@@ -2,20 +2,20 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
 
-    <id>JasonTaylorDev.CleanArchitectureBlazor</id>
-    <version>0.8.4</version>
-    <title>Clean Architecture Blazor Solution Template</title>
+    <id>JasonTaylorDev.RapidBlazor</id>
+    <version>0.9</version>
+    <title>Rapid Blazor Template</title>
     <authors>JasonTaylorDev</authors>
-    <description>Clean Architecture Blazor Solution Template for and .NET 6.</description>
+    <description>Rapid Blazor Template for .NET.</description>
     <summary>
-      This is a solution template for creating a Blazor WebAssembly application hosted on ASP.NET Core 6 and following the principles of Clean Architecture.
+      This is a solution template for creating a Blazor WebAssembly application hosted on ASP.NET Core and following the principles of Clean Architecture.
     </summary>
     <releaseNotes>
       Initial version.
     </releaseNotes>
 
-    <projectUrl>https://github.com/JasonTaylorDev/CleanArchitectureBlazor</projectUrl>
-    <repository type="git" url="https://github.com/JasonTaylorDev/CleanArchitectureBlazor.git" branch="main" />
+    <projectUrl>https://github.com/JasonTaylorDev/RapidBlazor</projectUrl>
+    <repository type="git" url="https://github.com/JasonTaylorDev/RapidBlazor.git" branch="main" />
 
     <license type="expression">MIT</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

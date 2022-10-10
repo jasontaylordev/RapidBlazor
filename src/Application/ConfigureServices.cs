@@ -1,5 +1,5 @@
-﻿using CleanArchitecture.Application.Common.Behaviours;
-using CleanArchitecture.WebUI.Shared.TodoLists;
+﻿using RapidBlazor.Application.Common.Behaviours;
+using RapidBlazor.WebUI.Shared.TodoLists;
 using System.Reflection;
 
 namespace Microsoft.Extensions.DependencyInjection;

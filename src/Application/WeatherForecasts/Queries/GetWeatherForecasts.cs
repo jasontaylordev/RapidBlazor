@@ -1,6 +1,6 @@
-﻿using CleanArchitecture.WebUI.Shared.WeatherForecasts;
+﻿using RapidBlazor.WebUI.Shared.WeatherForecasts;
 
-namespace CleanArchitecture.Application.WeatherForecasts.Queries;
+namespace RapidBlazor.Application.WeatherForecasts.Queries;
 
 public class GetWeatherForecastsQuery : IRequest<IList<WeatherForecast>>
 {

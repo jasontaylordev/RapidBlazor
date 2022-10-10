@@ -1,9 +1,9 @@
-﻿using CleanArchitecture.Application.Common.Exceptions;
-using CleanArchitecture.Application.TodoLists.Commands;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.WebUI.Shared.TodoLists;
+﻿using RapidBlazor.Application.Common.Exceptions;
+using RapidBlazor.Application.TodoLists.Commands;
+using RapidBlazor.Domain.Entities;
+using RapidBlazor.WebUI.Shared.TodoLists;
 
-namespace CleanArchitecture.Application.SubcutaneousTests.TodoLists.Commands;
+namespace RapidBlazor.Application.SubcutaneousTests.TodoLists.Commands;
 
 using static Testing;
 

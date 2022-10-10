@@ -1,14 +1,14 @@
-﻿using CleanArchitecture.Application.Common.Services.Data;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Infrastructure.Data.Interceptors;
-using CleanArchitecture.Infrastructure.Identity;
+﻿using RapidBlazor.Application.Common.Services.Data;
+using RapidBlazor.Domain.Entities;
+using RapidBlazor.Infrastructure.Data.Interceptors;
+using RapidBlazor.Infrastructure.Identity;
 using Duende.IdentityServer.EntityFramework.Options;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System.Reflection;
 
-namespace CleanArchitecture.Infrastructure.Data;
+namespace RapidBlazor.Infrastructure.Data;
 
 public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser, ApplicationRole>, IApplicationDbContext
 {

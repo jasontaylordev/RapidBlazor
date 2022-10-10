@@ -1,12 +1,12 @@
-﻿using CleanArchitecture.Application.Common.Services.Identity;
-using CleanArchitecture.Infrastructure.Data;
+﻿using RapidBlazor.Application.Common.Services.Identity;
+using RapidBlazor.Infrastructure.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CleanArchitecture.Application.SubcutaneousTests;
+namespace RapidBlazor.Application.SubcutaneousTests;
 
 using static Testing;
 

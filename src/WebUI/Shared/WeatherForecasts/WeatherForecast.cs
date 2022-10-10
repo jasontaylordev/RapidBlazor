@@ -1,4 +1,4 @@
-namespace CleanArchitecture.WebUI.Shared.WeatherForecasts;
+namespace RapidBlazor.WebUI.Shared.WeatherForecasts;
 
 public class WeatherForecast
 {

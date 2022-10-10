@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Domain.Exceptions;
-using CleanArchitecture.Domain.ValueObjects;
+﻿using RapidBlazor.Domain.Exceptions;
+using RapidBlazor.Domain.ValueObjects;
 
-namespace CleanArchitecture.Domain.UnitTests.ValueObjects;
+namespace RapidBlazor.Domain.UnitTests.ValueObjects;
 
 public class ColourTests
 {

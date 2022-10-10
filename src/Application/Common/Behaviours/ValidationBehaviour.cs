@@ -1,7 +1,7 @@
 ﻿using ValidationException
-    = CleanArchitecture.Application.Common.Exceptions.ValidationException;
+    = RapidBlazor.Application.Common.Exceptions.ValidationException;
 
-namespace CleanArchitecture.Application.Common.Behaviours;
+namespace RapidBlazor.Application.Common.Behaviours;
 
 public class ValidationBehavior<TRequest, TResponse>
     : IPipelineBehavior<TRequest, TResponse>

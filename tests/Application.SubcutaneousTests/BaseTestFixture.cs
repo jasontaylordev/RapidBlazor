@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Application.SubcutaneousTests;
+﻿namespace RapidBlazor.Application.SubcutaneousTests;
 
 using static Testing;
 

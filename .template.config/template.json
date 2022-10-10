@@ -7,16 +7,16 @@
     "WebAssembly",
     "Clean Architecture"
   ],
-  "name": "Clean Architecture Blazor Solution",
+  "name": "Rapid Blazor App",
   "description":  "This is a solution template for creating a Blazor WebAssembly application hosted on ASP.NET Core 6 and following the principles of Clean Architecture.",
-  "identity": "JasonTaylorDev.CleanArchitectureBlazor.Solution.CSharp",
-  "groupIdentity": "JasonTaylorDev.CleanArchitectureBlazor",
-  "shortName": "ca-blazorwasm-sln",
+  "identity": "JasonTaylorDev.RapidBlazor.Solution.CSharp",
+  "groupIdentity": "JasonTaylorDev.RapidBlazor",
+  "shortName": "rapid-blazor-sln",
   "tags": {
     "language": "C#",
     "type": "project"
   },
-  "sourceName": "CleanArchitecture",
+  "sourceName": "RapidBlazor",
   "preferNameDirectory": true,
   "sources": [
     {

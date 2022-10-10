@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Application.Common.Services.Identity;
+﻿namespace RapidBlazor.Application.Common.Services.Identity;
 
 public interface ICurrentUser
 {
