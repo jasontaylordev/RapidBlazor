@@ -62,12 +62,6 @@ function CreateResourceGroup {
   az role assignment create --assignee $appId --role Contributor --scope $resourceGroupId
 }
 
-function CreateRepository {
-  Write-Host "🧱 Creating GitHub Repository $GitHubRepositoryName"
-
-  gh repo create $GitHubRepositoryName
-}
-
 function CreateEnvironments {
   Write-Host "🧱 Creating GitHub Environments"
 
@@ -106,17 +100,6 @@ function SetSecrets {
   gh secret set "SQL_SERVER_ADMINISTRATOR_LOGIN_PASSWORD_PRODUCTION" --repo $repo
 }
 
-function PushNewProject {
-  git init
-
-  git add .
-  git commit -m "🎉 New project"
-
-  git remote add origin https://github.com/$GitHubOrganisationName/$GitHubRepositoryName.git
-  git branch -M main
-  git push -u origin main
-}
-
 # Azure Initialisation
 $testAppId = CreateWorkloadIdentity $testEnvironmentName
 CreateResourceGroup $testEnvironmentName $testAppId
@@ -124,8 +107,5 @@ $productionAppId = CreateWorkloadIdentity $productionEnvironmentName
 CreateResourceGroup $productionEnvironmentName $productionAppId
 
 # GitHub Initialisation
-CreateRepository
 CreateEnvironments
 SetSecrets $testAppId $productionAppId
-PushNewProject
-
