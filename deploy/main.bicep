@@ -24,7 +24,7 @@ param projectName string = 'RapidBlazor'
 
 // Define the names for resources.
 var environmentAbbreviation = environmentConfigurationMap[environmentType].environmentAbbreviation
-var keyVaultName = 'k-${projectName}-${environmentAbbreviation}'
+var keyVaultName = 'kv-${projectName}-${environmentAbbreviation}'
 var appServiceAppName = 'as-${projectName}-${resourceNameSuffix}-${environmentAbbreviation}'
 var appServicePlanName = 'plan-${projectName}-${environmentAbbreviation}'
 var logAnalyticsWorkspaceName = 'log-${projectName}-${environmentAbbreviation}'
