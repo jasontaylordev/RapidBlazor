@@ -18,7 +18,7 @@ The solution template requires the latest version of [.NET 6 SDK](https://dotnet
 Install the project template:
 
 ```bash
-dotnet new install JasonTaylorDev.RapidBlazor
+dotnet new --install JasonTaylorDev.RapidBlazor
 ```
 
 Create a new app:
