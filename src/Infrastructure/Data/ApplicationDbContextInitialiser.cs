@@ -1,8 +1,8 @@
-﻿using RapidBlazor.Domain.Entities;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using RapidBlazor.Domain.Entities;
 using RapidBlazor.Infrastructure.Identity;
 using RapidBlazor.WebUI.Shared.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 
 namespace RapidBlazor.Infrastructure.Data;
 
@@ -58,7 +58,7 @@ public class ApplicationDbContextInitialiser
     }
 
     private async Task SeedIdentityAsync()
-    {        
+    {
         // Create roles
         await _roleManager.CreateAsync(
             new ApplicationRole
@@ -96,11 +96,11 @@ public class ApplicationDbContextInitialiser
         // Create default admin user
         var adminUserName = "admin@localhost";
         var adminUser = new ApplicationUser { UserName = adminUserName, Email = adminUserName };
-        
+
         await _userManager.CreateAsync(adminUser, DefaultPassword);
 
         adminUser = await _userManager.FindByNameAsync(adminUserName);
-        
+
         await _userManager.AddToRoleAsync(adminUser, AdministratorsRole);
 
         // Create default auditor user

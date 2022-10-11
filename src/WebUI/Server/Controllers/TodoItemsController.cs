@@ -1,6 +1,6 @@
-﻿using RapidBlazor.Application.TodoItems.Commands;
+﻿using Microsoft.AspNetCore.Mvc;
+using RapidBlazor.Application.TodoItems.Commands;
 using RapidBlazor.WebUI.Shared.TodoItems;
-using Microsoft.AspNetCore.Mvc;
 
 namespace RapidBlazor.WebUI.Server.Controllers;
 

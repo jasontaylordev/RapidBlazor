@@ -1,5 +1,5 @@
-﻿using RapidBlazor.WebUI.Shared.Authorization;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
+using RapidBlazor.WebUI.Shared.Authorization;
 using System.Security.Claims;
 
 namespace RapidBlazor.WebUI.Shared.Authorization;

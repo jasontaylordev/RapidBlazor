@@ -20,7 +20,7 @@ public class UpdateTodoListTests : BaseTestFixture
                 Title = "New Title"
             });
 
-        await FluentActions.Invoking(() => 
+        await FluentActions.Invoking(() =>
             SendAsync(command)).Should().ThrowAsync<NotFoundException>();
     }
 

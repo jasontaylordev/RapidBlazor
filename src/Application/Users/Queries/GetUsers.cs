@@ -3,7 +3,7 @@ using RapidBlazor.WebUI.Shared.AccessControl;
 
 namespace RapidBlazor.Application.Users.Queries;
 
-public record GetUsersQuery(): IRequest<UsersVm>;
+public record GetUsersQuery() : IRequest<UsersVm>;
 
 public class GetUsersQueryHandler : IRequestHandler<GetUsersQuery, UsersVm>
 {

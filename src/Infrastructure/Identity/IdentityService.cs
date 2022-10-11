@@ -1,10 +1,10 @@
 ﻿using Ardalis.GuardClauses;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using RapidBlazor.Application.Common.Services.Identity;
 using RapidBlazor.WebUI.Shared.AccessControl;
 using RapidBlazor.WebUI.Shared.Authorization;
 using RapidBlazor.WebUI.Shared.Common;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 
 namespace RapidBlazor.Infrastructure.Identity;
 

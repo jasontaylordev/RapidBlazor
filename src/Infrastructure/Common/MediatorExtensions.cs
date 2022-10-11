@@ -1,5 +1,5 @@
-﻿using RapidBlazor.Domain.Common;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using RapidBlazor.Domain.Common;
 
 namespace MediatR;
 

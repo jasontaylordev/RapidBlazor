@@ -1,5 +1,5 @@
-﻿using RapidBlazor.Application.Common.Exceptions;
-using FluentValidation.Results;
+﻿using FluentValidation.Results;
+using RapidBlazor.Application.Common.Exceptions;
 
 namespace RapidBlazor.Application.UnitTests.Common.Exceptions;
 

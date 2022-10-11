@@ -1,5 +1,5 @@
-﻿using RapidBlazor.Application.Common.Services.Identity;
-using MediatR.Pipeline;
+﻿using MediatR.Pipeline;
+using RapidBlazor.Application.Common.Services.Identity;
 
 namespace RapidBlazor.Application.Common.Behaviours;
 

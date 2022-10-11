@@ -1,7 +1,7 @@
 ﻿using Ardalis.GuardClauses;
-using RapidBlazor.Application.Common.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using RapidBlazor.Application.Common.Exceptions;
 
 namespace RapidBlazor.WebUI.Server.Filters;
 

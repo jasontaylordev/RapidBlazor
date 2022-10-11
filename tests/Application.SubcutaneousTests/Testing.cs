@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Respawn;
-using RapidBlazor.Infrastructure.Identity;
 using RapidBlazor.Infrastructure.Data;
+using RapidBlazor.Infrastructure.Identity;
+using Respawn;
 using Respawn.Graph;
 
 namespace RapidBlazor.Application.SubcutaneousTests;

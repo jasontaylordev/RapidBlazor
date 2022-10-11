@@ -1,6 +1,6 @@
-﻿using RapidBlazor.WebUI.Shared.AccessControl;
+﻿using Microsoft.AspNetCore.Components;
+using RapidBlazor.WebUI.Shared.AccessControl;
 using RapidBlazor.WebUI.Shared.Authorization;
-using Microsoft.AspNetCore.Components;
 
 namespace RapidBlazor.WebUI.Client.Pages.Admin.AccessControl;
 

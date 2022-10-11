@@ -1,8 +1,8 @@
-﻿using RapidBlazor.Application.Roles.Commands;
+﻿using Microsoft.AspNetCore.Mvc;
+using RapidBlazor.Application.Roles.Commands;
 using RapidBlazor.Application.Roles.Queries;
 using RapidBlazor.WebUI.Shared.AccessControl;
 using RapidBlazor.WebUI.Shared.Authorization;
-using Microsoft.AspNetCore.Mvc;
 
 namespace RapidBlazor.WebUI.Server.Controllers.Admin;
 
@@ -25,7 +25,7 @@ public class RolesController : ApiControllerBase
     public async Task<IActionResult> PostRole(RoleDto newRole)
     {
         await Mediator.Send(new CreateRoleCommand(newRole));
-        
+
         return NoContent();
     }
 

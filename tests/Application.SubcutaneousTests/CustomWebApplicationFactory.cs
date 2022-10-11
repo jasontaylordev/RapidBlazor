@@ -1,10 +1,10 @@
-﻿using RapidBlazor.Application.Common.Services.Identity;
-using RapidBlazor.Infrastructure.Data;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RapidBlazor.Application.Common.Services.Identity;
+using RapidBlazor.Infrastructure.Data;
 
 namespace RapidBlazor.Application.SubcutaneousTests;
 

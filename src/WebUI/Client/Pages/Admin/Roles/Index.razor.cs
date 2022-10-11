@@ -1,6 +1,6 @@
-﻿using RapidBlazor.WebUI.Shared.AccessControl;
+﻿using Microsoft.AspNetCore.Components;
+using RapidBlazor.WebUI.Shared.AccessControl;
 using RapidBlazor.WebUI.Shared.Authorization;
-using Microsoft.AspNetCore.Components;
 
 namespace RapidBlazor.WebUI.Client.Pages.Admin.Roles;
 
@@ -25,7 +25,7 @@ public partial class Index
         if (!string.IsNullOrWhiteSpace(newRoleName))
         {
             var newRole = new RoleDto(Guid.NewGuid().ToString(), newRoleName, Permissions.None);
-            
+
             await RolesClient.PostRoleAsync(newRole);
 
             Model!.Roles.Add(newRole);

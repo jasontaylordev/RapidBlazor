@@ -14,8 +14,8 @@ public class CreateTodoListTests : BaseTestFixture
     {
         var command = new CreateTodoListCommand(
             new CreateTodoListRequest());
-        
-        await FluentActions.Invoking(() => 
+
+        await FluentActions.Invoking(() =>
             SendAsync(command)).Should().ThrowAsync<ValidationException>();
     }
 

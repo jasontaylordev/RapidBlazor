@@ -1,8 +1,8 @@
-﻿using RapidBlazor.WebUI.Shared.TodoItems;
-using RapidBlazor.WebUI.Shared.TodoLists;
-using RapidBlazor.WebUI.Client.Shared;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using RapidBlazor.WebUI.Client.Shared;
+using RapidBlazor.WebUI.Shared.TodoItems;
+using RapidBlazor.WebUI.Shared.TodoLists;
 
 namespace RapidBlazor.WebUI.Client.Pages.Todo;
 

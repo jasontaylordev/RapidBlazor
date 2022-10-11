@@ -1,7 +1,7 @@
-﻿using RapidBlazor.WebUI.Shared.Authorization;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using RapidBlazor.WebUI.Shared.Authorization;
 using System.Data;
 using System.Security.Claims;
 

@@ -3,7 +3,7 @@ using RapidBlazor.WebUI.Shared.Authorization;
 
 namespace RapidBlazor.Application.AccessControl.Commands;
 
-public record UpdateAccessControlCommand(string RoleId, Permissions Permissions): IRequest;
+public record UpdateAccessControlCommand(string RoleId, Permissions Permissions) : IRequest;
 
 public class UpdateAccessControlCommandHandler : AsyncRequestHandler<UpdateAccessControlCommand>
 {

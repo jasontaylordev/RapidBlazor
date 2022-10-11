@@ -1,12 +1,12 @@
 ﻿using Azure.Identity;
-using RapidBlazor.Application.Common.Services.Identity;
-using RapidBlazor.Infrastructure.Data;
-using RapidBlazor.WebUI.Server.Services;
-using RapidBlazor.WebUI.Shared.Authorization;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using NSwag;
 using NSwag.Generation.Processors.Security;
+using RapidBlazor.Application.Common.Services.Identity;
+using RapidBlazor.Infrastructure.Data;
+using RapidBlazor.WebUI.Server.Services;
+using RapidBlazor.WebUI.Shared.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 

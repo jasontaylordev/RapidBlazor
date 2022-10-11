@@ -1,7 +1,7 @@
-using RapidBlazor.Application.WeatherForecasts.Queries;
-using RapidBlazor.WebUI.Shared.WeatherForecasts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using RapidBlazor.Application.WeatherForecasts.Queries;
+using RapidBlazor.WebUI.Shared.WeatherForecasts;
 
 namespace RapidBlazor.WebUI.Server.Controllers;
 

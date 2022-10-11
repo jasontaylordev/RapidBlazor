@@ -1,7 +1,7 @@
-﻿using RapidBlazor.Application.TodoLists.Commands;
+﻿using Microsoft.AspNetCore.Mvc;
+using RapidBlazor.Application.TodoLists.Commands;
 using RapidBlazor.Application.TodoLists.Queries;
 using RapidBlazor.WebUI.Shared.TodoLists;
-using Microsoft.AspNetCore.Mvc;
 
 namespace RapidBlazor.WebUI.Server.Controllers;
 

@@ -14,7 +14,7 @@ public class DeleteTodoListTests : BaseTestFixture
     {
         var command = new DeleteTodoListCommand(99);
 
-        await FluentActions.Invoking(() => 
+        await FluentActions.Invoking(() =>
             SendAsync(command)).Should().ThrowAsync<NotFoundException>();
     }
 

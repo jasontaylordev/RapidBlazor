@@ -1,6 +1,6 @@
-﻿using RapidBlazor.WebUI.Server.Filters;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using RapidBlazor.WebUI.Server.Filters;
 
 namespace RapidBlazor.WebUI.Server.Controllers;
 

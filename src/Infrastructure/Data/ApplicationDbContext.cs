@@ -1,11 +1,11 @@
-﻿using RapidBlazor.Application.Common.Services.Data;
-using RapidBlazor.Domain.Entities;
-using RapidBlazor.Infrastructure.Data.Interceptors;
-using RapidBlazor.Infrastructure.Identity;
-using Duende.IdentityServer.EntityFramework.Options;
+﻿using Duende.IdentityServer.EntityFramework.Options;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using RapidBlazor.Application.Common.Services.Data;
+using RapidBlazor.Domain.Entities;
+using RapidBlazor.Infrastructure.Data.Interceptors;
+using RapidBlazor.Infrastructure.Identity;
 using System.Reflection;
 
 namespace RapidBlazor.Infrastructure.Data;

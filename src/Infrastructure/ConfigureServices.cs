@@ -1,10 +1,10 @@
-﻿using RapidBlazor.Application.Common.Services.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using RapidBlazor.Application.Common.Services.Data;
 using RapidBlazor.Application.Common.Services.Identity;
 using RapidBlazor.Infrastructure.Data;
 using RapidBlazor.Infrastructure.Data.Interceptors;
 using RapidBlazor.Infrastructure.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using System.IdentityModel.Tokens.Jwt;
 
 namespace Microsoft.Extensions.DependencyInjection;

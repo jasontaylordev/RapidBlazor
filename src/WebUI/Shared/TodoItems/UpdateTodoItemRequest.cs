@@ -1,5 +1,5 @@
-﻿using RapidBlazor.WebUI.Shared.TodoLists;
-using FluentValidation;
+﻿using FluentValidation;
+using RapidBlazor.WebUI.Shared.TodoLists;
 
 namespace RapidBlazor.WebUI.Shared.TodoItems;
 
@@ -13,7 +13,7 @@ public class UpdateTodoItemRequest
 
     public bool Done { get; set; }
 
-    public int Priority { get; set; } 
+    public int Priority { get; set; }
 
     public string Note { get; set; } = string.Empty;
 }

@@ -1,11 +1,11 @@
-using RapidBlazor.WebUI.Client;
-using RapidBlazor.WebUI.Client.Authorization;
-using RapidBlazor.WebUI.Shared.Authorization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.JSInterop;
+using RapidBlazor.WebUI.Client;
+using RapidBlazor.WebUI.Client.Authorization;
+using RapidBlazor.WebUI.Shared.Authorization;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");

@@ -1,8 +1,8 @@
-﻿using RapidBlazor.Application.AccessControl.Commands;
+﻿using Microsoft.AspNetCore.Mvc;
+using RapidBlazor.Application.AccessControl.Commands;
 using RapidBlazor.Application.AccessControl.Queries;
 using RapidBlazor.WebUI.Shared.AccessControl;
 using RapidBlazor.WebUI.Shared.Authorization;
-using Microsoft.AspNetCore.Mvc;
 
 namespace RapidBlazor.WebUI.Server.Controllers.Admin;
 

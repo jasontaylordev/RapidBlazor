@@ -1,6 +1,6 @@
-﻿using RapidBlazor.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using RapidBlazor.Domain.Entities;
 
 namespace RapidBlazor.Infrastructure.Data.Configurations;
 

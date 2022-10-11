@@ -1,6 +1,6 @@
-﻿using RapidBlazor.WebUI.Shared.TodoLists;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using RapidBlazor.WebUI.Shared.TodoLists;
 
 namespace RapidBlazor.WebUI.Client.Pages.Todo;
 
@@ -12,10 +12,10 @@ public partial class TodoState
     [Inject]
     public ITodoListsClient TodoListsClient { get; set; } = null!;
 
-    [Inject] 
+    [Inject]
     public ITodoItemsClient TodoItemsClient { get; set; } = null!;
 
-    [Inject] 
+    [Inject]
     public IJSInProcessRuntime JS { get; set; } = null!;
 
     public TodosVm? Model { get; set; }

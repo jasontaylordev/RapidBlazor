@@ -24,7 +24,7 @@ public interface IIdentityService
     Task UpdateUserAsync(UserDto updatedUser);
 
     Task CreateRoleAsync(RoleDto newRole);
-    
+
     Task UpdateRoleAsync(RoleDto updatedRole);
 
     Task DeleteRoleAsync(string roleId);

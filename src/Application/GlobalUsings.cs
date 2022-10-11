@@ -1,10 +1,10 @@
 ﻿global using Ardalis.GuardClauses;
 global using AutoMapper;
 global using AutoMapper.QueryableExtensions;
-global using RapidBlazor.Application.Common.Services.Data;
-global using RapidBlazor.Domain.Entities;
-global using RapidBlazor.WebUI.Shared.Common;
 global using FluentValidation;
 global using MediatR;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.Extensions.Logging;
+global using RapidBlazor.Application.Common.Services.Data;
+global using RapidBlazor.Domain.Entities;
+global using RapidBlazor.WebUI.Shared.Common;

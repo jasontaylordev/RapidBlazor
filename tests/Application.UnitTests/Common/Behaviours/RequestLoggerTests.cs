@@ -1,8 +1,8 @@
-﻿using RapidBlazor.Application.Common.Behaviours;
+﻿using Microsoft.Extensions.Logging;
+using RapidBlazor.Application.Common.Behaviours;
 using RapidBlazor.Application.Common.Services.Identity;
 using RapidBlazor.Application.TodoItems.Commands;
 using RapidBlazor.WebUI.Shared.TodoItems;
-using Microsoft.Extensions.Logging;
 
 namespace RapidBlazor.Application.UnitTests.Common.Behaviours;
 
