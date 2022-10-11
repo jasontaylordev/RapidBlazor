@@ -99,7 +99,7 @@ public partial class TodoItems
             }
         }
 
-        SelectedItem = null;
+        // SelectedItem = null;
     }
 
     private async Task SaveList()
