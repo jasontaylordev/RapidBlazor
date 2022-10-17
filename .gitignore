@@ -453,3 +453,5 @@ $RECYCLE.BIN/
 !.vscode/launch.json
 !.vscode/extensions.json
 /deploy/main.parameters.json
+/.vscode/tasks.json
+/.vscode/launch.json

@@ -26,7 +26,7 @@ function CreateWorkloadIdentity {
   # Create Azure AD Application Registration
   $applicationRegistrationDetails=$(az ad app create --display-name "$ProjectName$environmentName") | ConvertFrom-Json
 
-  # Create Federated Credential for ...
+  # Create federated credentials 
   $credential = @{
     name="$ProjectName$environmentName";
     issuer="https://token.actions.githubusercontent.com";
@@ -36,7 +36,6 @@ function CreateWorkloadIdentity {
   
   $credential | az ad app federated-credential create --id $applicationRegistrationDetails.id --parameters "@-" | Out-Null
   
-  # Create Federated Credential for ...
   $credential = @{
     name="$ProjectName";
     issuer="https://token.actions.githubusercontent.com";
