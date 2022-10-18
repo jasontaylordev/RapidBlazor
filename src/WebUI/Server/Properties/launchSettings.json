@@ -3,17 +3,17 @@
       "windowsAuthentication": false,
       "anonymousAuthentication": true,
       "iisExpress": {
-        "applicationUrl": "http://localhost:7569",
+        "applicationUrl": "http://localhost:5246",
         "sslPort": 44376
       }
     },
     "profiles": {
-      "RapidBlazor.WebUI.Server": {
+      "https": {
         "commandName": "Project",
         "dotnetRunMessages": true,
         "launchBrowser": true,
         "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
-        "applicationUrl": "https://localhost:7068;http://localhost:5096",
+        "applicationUrl": "https://localhost:7124;http://localhost:5083",
         "environmentVariables": {
           "ASPNETCORE_ENVIRONMENT": "Development"
         }
