@@ -13,12 +13,12 @@ Please consider this a preview, I am still actively working on this template. If
 If you find this project useful, please give it a star. Thanks! ⭐
 
 ## Getting Started
-The solution template requires the latest version of [.NET 6 SDK](https://dotnet.microsoft.com/download/dotnet/6.0).
+The solution template requires the latest version of [.NET 7 SDK](https://dotnet.microsoft.com/download/dotnet/7.0).
 
 Install the project template:
 
 ```bash
-dotnet new --install JasonTaylorDev.RapidBlazor
+dotnet new install JasonTaylorDev.RapidBlazor
 ```
 
 Create a new app:
