@@ -6,7 +6,7 @@
 [![Discord](https://img.shields.io/discord/893301913662148658?label=Discord)](https://discord.gg/p9YtBjfgGe)
 ![Twitter Follow](https://img.shields.io/twitter/follow/jasontaylordev?label=Follow&style=social)
 
-This is a solution template for creating a Blazor WebAssembly application hosted on ASP.NET Core 6 and following the principles of Clean Architecture.
+This is a solution template for creating a Blazor WebAssembly application hosted on ASP.NET Core 7 and following the principles of Clean Architecture.
 
 Please consider this a preview, I am still actively working on this template. If you spot a problem or would like to suggest an improvement, please let me know by [creating an issue](https://github.com/jasontaylordev/RapidBlazor/issues).
 
