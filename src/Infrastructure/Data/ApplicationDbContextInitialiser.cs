@@ -101,7 +101,7 @@ public class ApplicationDbContextInitialiser
 
         adminUser = await _userManager.FindByNameAsync(adminUserName);
 
-        await _userManager.AddToRoleAsync(adminUser, AdministratorsRole);
+        await _userManager.AddToRoleAsync(adminUser!, AdministratorsRole);
 
         // Create default auditor user
         var auditorUserName = "auditor@localhost";

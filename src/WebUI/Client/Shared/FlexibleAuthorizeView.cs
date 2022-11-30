@@ -6,7 +6,9 @@ namespace RapidBlazor.WebUI.Client.Shared;
 public class FlexibleAuthorizeView : Microsoft.AspNetCore.Components.Authorization.AuthorizeView
 {
     [Parameter]
+#pragma warning disable BL0007 // Component parameters should be auto properties
     public Permissions Permissions
+#pragma warning restore BL0007 // Component parameters should be auto properties
     {
         get
         {

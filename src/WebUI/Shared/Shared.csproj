@@ -14,6 +14,6 @@
 
     <ItemGroup>
         <PackageReference Include="FluentValidation" Version="10.4.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="7.0.0-rc.2.22476.2" />
+        <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="7.0.0" />
     </ItemGroup>
 </Project>
