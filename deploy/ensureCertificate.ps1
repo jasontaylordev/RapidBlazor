@@ -13,6 +13,9 @@ Param(
     [String]$certificateName = "RapidBlazorSigningCert"
 )
 
+# Grant Microsoft.Azure.WebSites service principal necessary permissions.
+az keyvault set-policy --name $keyVaultName --spn "abfa0a7c-a6b6-4736-8310-5855508787cd" --secret-permissions get --certificate-permissions get --output none
+
 Write-Host -NoNewLine 🔍 Finding Signing Certificate...
 $certificateCount = az keyvault certificate list --vault-name $keyVaultName --query "length([?name == '$certificateName'])"
 
@@ -37,5 +40,5 @@ az webapp config appsettings set --resource-group $resourceGroupName --name $app
 Write-Host Done! ✅
 
 Write-Host -NoNewLine 🔒 Import Certificate to App Service...
-az webapp config ssl import --resource-group $resourceGroupName --name $appServiceName --key-vault $keyVaultName --key-vault-certificate-name $certificateName
+az webapp config ssl import --resource-group $resourceGroupName --name $appServiceName --key-vault $keyVaultName --key-vault-certificate-name $certificateName --output none
 Write-Host Done! ✅

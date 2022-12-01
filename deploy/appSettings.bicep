@@ -5,7 +5,7 @@ param appServiceAppName string
 param defaultAppSettings object
 
 @description('The existing app settings (if any)')
-param exitingAppSettings object
+param existingAppSettings object
 
 resource appServiceApp 'Microsoft.Web/sites@2021-01-15' existing = {
   name: appServiceAppName
@@ -14,5 +14,5 @@ resource appServiceApp 'Microsoft.Web/sites@2021-01-15' existing = {
 resource siteconfig 'Microsoft.Web/sites/config@2022-03-01' = {
   name: 'appsettings'
   parent: appServiceApp
-  properties: union(defaultAppSettings, exitingAppSettings)
+  properties: union(defaultAppSettings, existingAppSettings)
 }

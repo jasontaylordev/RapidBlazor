@@ -133,7 +133,7 @@ module appSettings 'appSettings.bicep' = {
       ApplicationInsights__ConnectionString: applicationInsights.properties.ConnectionString
       KeyVaultName: keyVaultName
     }
-    exitingAppSettings: list(resourceId('Microsoft.Web/sites/config', appServiceApp.name, 'appsettings'), '2022-03-01').properties
+    existingAppSettings: list(resourceId('Microsoft.Web/sites/config', appServiceApp.name, 'appsettings'), '2022-03-01').properties
   }
 }
 
@@ -149,6 +149,10 @@ resource keyVaultAccessPolicy 'Microsoft.KeyVault/vaults/accessPolicies@2019-09-
             'Get'
           ]
           secrets: [
+            'List'
+            'Get'
+          ]
+          certificates: [
             'List'
             'Get'
           ]
