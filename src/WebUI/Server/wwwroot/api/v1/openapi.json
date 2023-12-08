@@ -1,5 +1,5 @@
 {
-  "x-generator": "NSwag v13.18.0.0 (NJsonSchema v10.8.0.0 (Newtonsoft.Json v13.0.0.0))",
+  "x-generator": "NSwag v13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))",
   "openapi": "3.0.0",
   "info": {
     "title": "CleanArchitecture API",
@@ -426,8 +426,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "nullable": true
+              "type": "string"
             },
             "x-position": 1
           }
@@ -476,8 +475,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "nullable": true
+              "type": "string"
             },
             "x-position": 1
           }
@@ -541,8 +539,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "nullable": true
+              "type": "string"
             },
             "x-position": 1
           }
@@ -576,8 +573,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "nullable": true
+              "type": "string"
             },
             "x-position": 1
           }

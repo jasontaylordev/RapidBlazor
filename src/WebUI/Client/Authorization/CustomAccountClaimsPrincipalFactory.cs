@@ -1,45 +1,41 @@
-﻿using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
+using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication.Internal;
 using System.Security.Claims;
 using System.Text.Json;
 
-namespace RapidBlazor.WebUI.Client.Authorization;
-
-public class CustomAccountClaimsPrincipalFactory : AccountClaimsPrincipalFactory<RemoteUserAccount>
+namespace RapidBlazor.WebUI.Client.Authorization
 {
-    public CustomAccountClaimsPrincipalFactory(IAccessTokenProviderAccessor accessor)
-        : base(accessor)
+    public class CustomAccountClaimsPrincipalFactory : AccountClaimsPrincipalFactory<RemoteUserAccount>
     {
-    }
-
-    public async override ValueTask<ClaimsPrincipal> CreateUserAsync(
-        RemoteUserAccount account,
-        RemoteAuthenticationUserOptions options)
-    {
-        var user = await base.CreateUserAsync(account, options);
-
-        var identity = (ClaimsIdentity)user.Identity!;
-
-        if (account != null)
+        public CustomAccountClaimsPrincipalFactory(IAccessTokenProviderAccessor accessor)
+            : base(accessor)
         {
-            foreach (var property in account.AdditionalProperties)
-            {
-                var key = property.Key;
-                var value = property.Value;
-
-                if (value != null &&
-                    value is JsonElement element && element.ValueKind == JsonValueKind.Array)
-                {
-                    identity.RemoveClaim(identity.FindFirst(property.Key));
-
-                    var claims = element.EnumerateArray()
-                        .Select(x => new Claim(property.Key, x.ToString()));
-
-                    identity.AddClaims(claims);
-                }
-            }
         }
 
-        return user;
+        public override async ValueTask<ClaimsPrincipal> CreateUserAsync(RemoteUserAccount account,
+            RemoteAuthenticationUserOptions options)
+        {
+            var user = await base.CreateUserAsync(account, options);
+
+            var identity = (ClaimsIdentity)user.Identity!;
+
+            if (account is not null)
+            {
+                foreach ((string? key, object? value) in account.AdditionalProperties)
+                {
+                    if (value is JsonElement { ValueKind: JsonValueKind.Array } element)
+                    {
+                        identity.RemoveClaim(identity.FindFirst(key));
+
+                        var claims = element.EnumerateArray()
+                            .Select(x => new Claim(key, x.ToString()));
+                        
+                        identity.AddClaims(claims);
+                    }
+                }
+            }
+
+            return user;
+        }
     }
 }
