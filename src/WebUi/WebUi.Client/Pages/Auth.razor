@@ -1,0 +1,23 @@
+﻿@page "/auth"
+
+@using RapidBlazor.WebUi.Shared.Authorization
+
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+<PageTitle>Auth</PageTitle>
+
+<h1>You are authenticated</h1>
+
+<AuthorizeView>
+    Hello @context.User.Identity?.Name!
+</AuthorizeView>
+
+<FlexibleAuthorizeView Permissions="Permissions.All">
+	<ul>
+		@foreach (var claim in context.User.Claims)
+        {
+                <li><b>@claim.Type</b>: @claim.Value</li>
+        }
+    </ul>
+</FlexibleAuthorizeView>

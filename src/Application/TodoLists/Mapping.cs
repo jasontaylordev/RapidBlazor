@@ -1,12 +1,11 @@
-﻿using RapidBlazor.WebUI.Shared.TodoLists;
+using RapidBlazor.Domain.Entities;
+using RapidBlazor.WebUi.Shared.TodoLists;
+using Riok.Mapperly.Abstractions;
 
 namespace RapidBlazor.Application.TodoLists;
 
-public class Mapping : Profile
+[Mapper]
+public static partial class Mapping
 {
-    public Mapping()
-    {
-        CreateMap<TodoList, TodoListDto>();
-        CreateMap<TodoItem, TodoItemDto>();
-    }
+    public static partial IQueryable<TodoListDto> ProjectToDto(this IQueryable<TodoList> s);
 }

@@ -2,9 +2,9 @@
 using RapidBlazor.Application.Common.Exceptions;
 using RapidBlazor.Application.TodoLists.Commands;
 using RapidBlazor.Domain.Entities;
-using RapidBlazor.WebUI.Shared.TodoLists;
+using RapidBlazor.WebUi.Shared.TodoLists;
 
-namespace RapidBlazor.Application.SubcutaneousTests.TodoLists.Commands;
+namespace RapidBlazor.Application.IntegrationTests.TodoLists.Commands;
 
 using static Testing;
 
@@ -41,7 +41,7 @@ public class UpdateTodoListTests : BaseTestFixture
             });
 
         (await FluentActions.Invoking(() =>
-            SendAsync(command))
+                    SendAsync(command))
                 .Should().ThrowAsync<ValidationException>().Where(ex => ex.Errors.ContainsKey("List.Title")))
                 .And.Errors["List.Title"].Should().Contain("'Title' must be unique.");
     }

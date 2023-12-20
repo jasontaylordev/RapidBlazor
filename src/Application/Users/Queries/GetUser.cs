@@ -1,5 +1,5 @@
 ﻿using RapidBlazor.Application.Common.Services.Identity;
-using RapidBlazor.WebUI.Shared.AccessControl;
+using RapidBlazor.WebUi.Shared.AccessControl;
 
 namespace RapidBlazor.Application.Users.Queries;
 

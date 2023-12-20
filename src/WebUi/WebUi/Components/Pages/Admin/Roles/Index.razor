@@ -1,0 +1,74 @@
+@page "/admin/roles"
+@attribute [Authorize(Permissions.ViewRoles)]
+
+<PageTitle>Roles</PageTitle>
+
+<h1>Roles</h1>
+
+<p>This is a description.</p>
+
+@if (Model == null) return;
+
+<table class="table table-striped table-hover w-50">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var role in Model.Roles)
+        {
+            @if (role != _roleToEdit)
+            {
+                <tr>
+                    <td>
+                        <input type="text" id="name" class="form-control-plaintext" style="padding-left: 0.75rem" value="@role.Name" />
+                    </td>
+                    <td>
+                        <FlexibleAuthorizeView Permissions="@Permissions.ManageRoles">
+                            <button type="button" class="btn btn-secondary" @onclick="() => EditRole(role)">
+                                <span class="oi oi-pencil"></span>
+                            </button>
+                            <button type="button" class="btn btn-secondary" @onclick="() => DeleteRole(role)">
+                                <span class="oi oi-x"></span>
+                            </button>
+                        </FlexibleAuthorizeView>
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>
+                        <input type="text" id="name" class="form-control" @bind="@role.Name" />
+                    </td>
+                    <td>
+                        <FlexibleAuthorizeView Permissions="@Permissions.ManageRoles">
+                            <button type="button" class="btn btn-secondary" @onclick="() => UpdateRole()">
+                                <span class="oi oi-check"></span>
+                            </button>
+                            <button type="button" class="btn btn-secondary" @onclick="() => CancelEditRole()">
+                                <span class="oi oi-action-undo"></span>
+                            </button>
+                        </FlexibleAuthorizeView>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+    <FlexibleAuthorizeView Permissions="@Permissions.ManageRoles">
+        <tfoot>
+            <tr>
+                <td>
+                    <input type="text" id="name" class="form-control" placeholder="New Role..." @bind="_newRoleName" />
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary" @onclick="AddRole">
+                        <span class="oi oi-plus"></span>
+                    </button>
+                </td>
+            </tr>
+        </tfoot>
+    </FlexibleAuthorizeView>
+</table>

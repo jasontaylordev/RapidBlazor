@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>RapidBlazor.WebUi.Shared</AssemblyName>
+        <RootNamespace>RapidBlazor.WebUi.Shared</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="11.8.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="8.0.0" />
+      <PackageReference Include="NetEscapades.EnumGenerators" Version="1.0.0-beta08"
+                        PrivateAssets="all" ExcludeAssets="runtime" />
+    </ItemGroup>
+
+</Project>

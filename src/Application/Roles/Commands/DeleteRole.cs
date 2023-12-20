@@ -1,10 +1,10 @@
-﻿using RapidBlazor.Application.Common.Services.Identity;
+using RapidBlazor.Application.Common.Services.Identity;
 
 namespace RapidBlazor.Application.Roles.Commands;
 
-public record DeleteRoleCommand(string RoleId) : IRequest;
+public sealed record DeleteRoleCommand(string RoleId) : IRequest<Unit>;
 
-public class DeleteRoleCommandHandler : AsyncRequestHandler<DeleteRoleCommand>
+public sealed class DeleteRoleCommandHandler : IRequestHandler<DeleteRoleCommand, Unit>
 {
     private readonly IIdentityService _identityService;
 
@@ -13,8 +13,9 @@ public class DeleteRoleCommandHandler : AsyncRequestHandler<DeleteRoleCommand>
         _identityService = identityService;
     }
 
-    protected override async Task Handle(DeleteRoleCommand request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(DeleteRoleCommand request, CancellationToken cancellationToken)
     {
         await _identityService.DeleteRoleAsync(request.RoleId);
+        return Unit.Value;
     }
 }

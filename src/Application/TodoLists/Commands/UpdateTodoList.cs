@@ -1,24 +1,24 @@
-﻿using RapidBlazor.WebUI.Shared.TodoLists;
+using FluentValidation;
+using RapidBlazor.Application.Common.Services.Data;
+using RapidBlazor.WebUi.Shared.TodoLists;
 
 namespace RapidBlazor.Application.TodoLists.Commands;
 
-public record UpdateTodoListCommand(UpdateTodoListRequest List) : IRequest;
+public sealed record UpdateTodoListCommand(UpdateTodoListRequest List) : IRequest<Unit>;
 
-public class UpdateTodoListCommandValidator : AbstractValidator<UpdateTodoListCommand>
+public sealed class UpdateTodoListCommandValidator : AbstractValidator<UpdateTodoListCommand>
 {
     private readonly IApplicationDbContext _context;
 
     public UpdateTodoListCommandValidator(IApplicationDbContext context)
     {
         _context = context;
-
-        RuleFor(p => p.List).SetValidator(new UpdateTodoListRequestValidator());
-
+        
         // Extended validation for server-side.
         RuleFor(p => p.List.Title)
             .MustAsync(BeUniqueTitle)
-                .WithMessage("'Title' must be unique.")
-                .WithErrorCode("UNIQUE_TITLE");
+            .WithMessage("'Title' must be unique.")
+            .WithErrorCode("UNIQUE_TITLE");
     }
 
     public async Task<bool> BeUniqueTitle(UpdateTodoListCommand model, string title, CancellationToken cancellationToken)
@@ -29,8 +29,7 @@ public class UpdateTodoListCommandValidator : AbstractValidator<UpdateTodoListCo
     }
 }
 
-public class UpdateTodoListCommandHandler
-: AsyncRequestHandler<UpdateTodoListCommand>
+public sealed class UpdateTodoListCommandHandler : IRequestHandler<UpdateTodoListCommand, Unit>
 {
     private readonly IApplicationDbContext _context;
 
@@ -39,7 +38,7 @@ public class UpdateTodoListCommandHandler
         _context = context;
     }
 
-    protected override async Task Handle(UpdateTodoListCommand request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(UpdateTodoListCommand request, CancellationToken cancellationToken)
     {
         var entity = await _context.TodoLists.FindAsync(request.List.Id);
 
@@ -48,5 +47,7 @@ public class UpdateTodoListCommandHandler
         entity.Title = request.List.Title;
 
         await _context.SaveChangesAsync(cancellationToken);
+        
+        return Unit.Value;
     }
 }

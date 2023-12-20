@@ -1,6 +1,6 @@
-﻿namespace RapidBlazor.Application.Common.Services.Identity;
+namespace RapidBlazor.Application.Common.Services.Identity;
 
 public interface ICurrentUser
 {
-    string? UserId { get; }
+        string? UserId { get; }
 }

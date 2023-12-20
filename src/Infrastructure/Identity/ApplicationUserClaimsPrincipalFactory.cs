@@ -1,8 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using RapidBlazor.WebUI.Shared.Authorization;
-using System.Data;
+using RapidBlazor.WebUi.Shared.Authorization;
 using System.Security.Claims;
 
 namespace RapidBlazor.Infrastructure.Identity;
@@ -12,28 +11,28 @@ public class ApplicationUserClaimsPrincipalFactory : UserClaimsPrincipalFactory<
     public ApplicationUserClaimsPrincipalFactory(
         UserManager<ApplicationUser> userManager,
         RoleManager<ApplicationRole> roleManager,
-        IOptions<IdentityOptions> optionsAccessor)
-    : base(userManager, roleManager, optionsAccessor)
-    { }
+        IOptions<IdentityOptions> options)
+        : base(userManager, roleManager, options)
+    {
+    }
 
     protected override async Task<ClaimsIdentity> GenerateClaimsAsync(ApplicationUser user)
     {
         var identity = await base.GenerateClaimsAsync(user);
 
-        var userRoleNames = await UserManager.GetRolesAsync(user) ?? Array.Empty<string>();
+        var userRolesName = await UserManager.GetRolesAsync(user);
 
         var userRoles = await RoleManager.Roles.Where(r =>
-            userRoleNames.Contains(r.Name ?? string.Empty)).ToListAsync();
+            userRolesName.Contains(r.Name ?? string.Empty)).ToListAsync();
 
         var userPermissions = Permissions.None;
 
         foreach (var role in userRoles)
             userPermissions |= role.Permissions;
 
-        var permissionsValue = (int)userPermissions;
-
-        identity.AddClaim(
-            new Claim(CustomClaimTypes.Permissions, permissionsValue.ToString()));
+        var permissionValue = (int)userPermissions;
+        
+        identity.AddClaim(new Claim(CustomClaimTypes.Permissions, permissionValue.ToString()));
 
         return identity;
     }

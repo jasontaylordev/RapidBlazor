@@ -1,14 +1,14 @@
-﻿using RapidBlazor.Domain.Common;
+using RapidBlazor.Domain.Common;
 using RapidBlazor.Domain.Entities;
 
 namespace RapidBlazor.Domain.Events;
 
-public class TodoItemCompletedEvent : BaseEvent
+public sealed class TodoItemCompletedEvent : BaseEvent
 {
+    public TodoItem Item { get; }
+
     public TodoItemCompletedEvent(TodoItem item)
     {
         Item = item;
     }
-
-    public TodoItem Item { get; }
 }

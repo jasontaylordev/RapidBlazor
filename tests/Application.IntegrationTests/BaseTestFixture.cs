@@ -1,4 +1,4 @@
-﻿namespace RapidBlazor.Application.SubcutaneousTests;
+﻿namespace RapidBlazor.Application.IntegrationTests;
 
 using static Testing;
 

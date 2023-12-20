@@ -1,9 +1,10 @@
-﻿using MediatR.Pipeline;
+using MediatR.Pipeline;
+using Microsoft.Extensions.Logging;
 using RapidBlazor.Application.Common.Services.Identity;
 
 namespace RapidBlazor.Application.Common.Behaviours;
 
-public class LoggingBehaviour<TRequest>
+public sealed class LoggingBehaviour<TRequest>
     : IRequestPreProcessor<TRequest> where TRequest : notnull
 {
     private readonly ILogger _logger;
@@ -11,8 +12,8 @@ public class LoggingBehaviour<TRequest>
     private readonly IIdentityService _identityService;
 
     public LoggingBehaviour(
-        ILogger<TRequest> logger,
-        ICurrentUser currentUser,
+        ILogger logger, 
+        ICurrentUser currentUser, 
         IIdentityService identityService)
     {
         _logger = logger;
@@ -20,8 +21,7 @@ public class LoggingBehaviour<TRequest>
         _identityService = identityService;
     }
 
-    public async Task Process(TRequest request,
-        CancellationToken cancellationToken)
+    public async Task Process(TRequest request, CancellationToken cancellationToken)
     {
         var requestName = typeof(TRequest).Name;
         var userId = _currentUser.UserId ?? string.Empty;
@@ -31,7 +31,7 @@ public class LoggingBehaviour<TRequest>
         {
             userName = await _identityService.GetUserNameAsync(userId);
         }
-
+        
         _logger.LogInformation("CleanArchitecture Request: {Name} {@UserId} {@UserName} {@Request}",
             requestName, userId, userName, request);
     }

@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using RapidBlazor.Application.Common.Services.Identity;
 using RapidBlazor.Infrastructure.Data;
 
-namespace RapidBlazor.Application.SubcutaneousTests;
+namespace RapidBlazor.Application.IntegrationTests;
 
 using static Testing;
 

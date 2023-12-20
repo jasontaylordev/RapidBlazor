@@ -1,13 +1,11 @@
-﻿using RapidBlazor.Domain.Common;
+using RapidBlazor.Domain.Common;
 
 namespace RapidBlazor.Domain.Entities;
 
-public class TodoList : BaseAuditableEntity
+public sealed class TodoList : BaseAuditableEntity
 {
     public string Title { get; set; } = string.Empty;
-
     public string Colour { get; set; } = string.Empty;
 
-    public ICollection<TodoItem> Items { get; set; }
-        = new List<TodoItem>();
+    public ICollection<TodoItem> Items { get; set; } = new List<TodoItem>();
 }

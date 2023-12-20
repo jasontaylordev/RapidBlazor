@@ -1,29 +1,26 @@
-﻿using RapidBlazor.Domain.Exceptions;
-using RapidBlazor.Domain.ValueObjects;
+using RapidBlazor.Domain.ValueObject;
+using RapidBlazor.Domain.Exceptions;
 
 namespace RapidBlazor.Domain.UnitTests.ValueObjects;
 
 public class ColourTests
 {
-    [Test]
+    [Fact]
     public void ShouldReturnCorrectColourCode()
     {
         var code = "#FFFFFF";
-
         var colour = Colour.From(code);
-
         colour.Code.Should().Be(code);
     }
 
-    [Test]
+    [Fact]
     public void ToStringReturnsCode()
     {
         var colour = Colour.White;
-
         colour.ToString().Should().Be(colour.Code);
     }
 
-    [Test]
+    [Fact]
     public void ShouldPerformImplicitConversionToColourCodeString()
     {
         string code = Colour.White;
@@ -31,15 +28,15 @@ public class ColourTests
         code.Should().Be("#FFFFFF");
     }
 
-    [Test]
-    public void ShouldPerformExplicitConversionGivenSupportedColourCode()
+    [Fact]
+    public void ShouldPerformExplicitConversionGivenSupportedColorCode()
     {
-        var colour = (Colour)"#FFFFFF";
+        var color = (Colour)"#FFFFFF";
 
-        colour.Should().Be(Colour.White);
+        color.Should().Be(Colour.White);
     }
 
-    [Test]
+    [Fact]
     public void ShouldThrowUnsupportedColourExceptionGivenNotSupportedColourCode()
     {
         FluentActions.Invoking(() => Colour.From("##FF33CC"))

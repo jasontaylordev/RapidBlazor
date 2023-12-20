@@ -1,20 +1,23 @@
-﻿using RapidBlazor.Domain.Events;
-using RapidBlazor.WebUI.Shared.TodoItems;
+using FluentValidation;
+using RapidBlazor.Application.Common.Services.Data;
+using RapidBlazor.Domain.Entities;
+using RapidBlazor.Domain.Events;
+using RapidBlazor.WebUi.Shared.TodoItems;
 
 namespace RapidBlazor.Application.TodoItems.Commands;
 
-public record CreateTodoItemCommand(CreateTodoItemRequest Item) : IRequest<int>;
+public sealed record CreateTodoItemCommand(CreateTodoItemRequest Item) : IRequest<int>;
 
-public class CreateTodoItemCommandValidator : AbstractValidator<CreateTodoItemCommand>
+public sealed class CreateTodoItemCommandValidator : AbstractValidator<CreateTodoItemCommand>
 {
     public CreateTodoItemCommandValidator()
     {
         RuleFor(p => p.Item).SetValidator(new CreateTodoItemRequestValidator());
     }
-}
+} 
 
-public class CreateTodoItemCommandHandler
-        : IRequestHandler<CreateTodoItemCommand, int>
+public sealed class CreateTodoItemCommandHandler
+    : IRequestHandler<CreateTodoItemCommand, int>
 {
     private readonly IApplicationDbContext _context;
 
