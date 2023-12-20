@@ -1,10 +1,10 @@
-﻿using Ardalis.GuardClauses;
+using Ardalis.GuardClauses;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RapidBlazor.Application.Common.Services.Identity;
-using RapidBlazor.WebUI.Shared.AccessControl;
-using RapidBlazor.WebUI.Shared.Authorization;
-using RapidBlazor.WebUI.Shared.Common;
+using RapidBlazor.WebUi.Shared.AccessControl;
+using RapidBlazor.WebUi.Shared.Authorization;
+using RapidBlazor.WebUi.Shared.Common;
 
 namespace RapidBlazor.Infrastructure.Identity;
 
@@ -14,7 +14,7 @@ public class IdentityService : IIdentityService
     private readonly RoleManager<ApplicationRole> _roleManager;
 
     public IdentityService(
-        UserManager<ApplicationUser> userManager,
+        UserManager<ApplicationUser> userManager, 
         RoleManager<ApplicationRole> roleManager)
     {
         _userManager = userManager;
@@ -25,12 +25,10 @@ public class IdentityService : IIdentityService
     {
         var user = await _userManager.Users.FirstAsync(u =>
             u.Id == userId);
-
         return user.UserName!;
     }
 
-    public async Task<Result<string>> CreateUserAsync(
-        string userName, string password)
+    public async Task<Result<string>> CreateUserAsync(string userName, string password)
     {
         var user = new ApplicationUser
         {
@@ -47,7 +45,7 @@ public class IdentityService : IIdentityService
 
         return Result<string>.Failure(result.Errors.Select(e => e.Description));
     }
-
+    
     public async Task<Result> DeleteUserAsync(string userId)
     {
         var user = _userManager.Users.SingleOrDefault(u =>
@@ -133,8 +131,8 @@ public class IdentityService : IIdentityService
         await _userManager.UpdateAsync(user);
 
         var currentRoles = await _userManager.GetRolesAsync(user);
-        var addedRoles = updatedUser.Roles.Except(currentRoles);
-        var removedRoles = currentRoles.Except(updatedUser.Roles);
+        var addedRoles = updatedUser.Roles.Except(currentRoles).ToList();
+        var removedRoles = currentRoles.Except(updatedUser.Roles).ToList();
 
         if (addedRoles.Any())
         {

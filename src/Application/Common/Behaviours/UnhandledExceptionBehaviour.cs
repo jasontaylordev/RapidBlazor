@@ -1,8 +1,10 @@
-﻿namespace RapidBlazor.Application.Common.Behaviours;
+using Microsoft.Extensions.Logging;
 
-public class UnhandledExceptionBehaviour<TRequest, TResponse>
-    : IPipelineBehavior<TRequest, TResponse>
-        where TRequest : IRequest<TResponse>
+namespace RapidBlazor.Application.Common.Behaviours;
+
+public sealed class UnhandledExceptionBehaviour<TRequest, TResponse>
+    : IPipelineBehavior<TRequest,TResponse>
+    where TRequest : IRequest<TResponse>
 {
     private readonly ILogger<TRequest> _logger;
 
@@ -12,9 +14,9 @@ public class UnhandledExceptionBehaviour<TRequest, TResponse>
     }
 
     public async Task<TResponse> Handle(
-        TRequest request,
-        CancellationToken cancellationToken,
-        RequestHandlerDelegate<TResponse> next)
+        TRequest request, 
+        RequestHandlerDelegate<TResponse> next, 
+        CancellationToken cancellationToken)
     {
         try
         {
@@ -25,10 +27,8 @@ public class UnhandledExceptionBehaviour<TRequest, TResponse>
             var requestName = typeof(TRequest).Name;
 
             _logger.LogError(
-                ex,
-                "CleanArchitecture Request: Unhandled Exception for Request {Name} {@Request}",
-                requestName,
-                request);
+                ex, "CleanArchitecture Request: Unhandled Exception for Request {Name} {@Request}",
+                requestName, request);
 
             throw;
         }

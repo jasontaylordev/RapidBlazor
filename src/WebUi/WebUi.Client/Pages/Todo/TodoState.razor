@@ -1,0 +1,6 @@
+@using RapidBlazor.WebUi.Shared.Authorization
+@attribute [Authorize]
+
+<CascadingValue Value="this">
+    @ChildContent
+</CascadingValue>

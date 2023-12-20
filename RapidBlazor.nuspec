@@ -3,7 +3,7 @@
   <metadata>
 
     <id>JasonTaylorDev.RapidBlazor</id>
-    <version>7.0.3</version>
+    <version>8.0.0</version>
     <title>Rapid Blazor Template</title>
     <authors>JasonTaylorDev</authors>
     <description>Rapid Blazor Template for .NET.</description>
@@ -11,7 +11,7 @@
       This is a solution template for creating a Blazor WebAssembly application hosted on ASP.NET Core and following the principles of Clean Architecture.
     </summary>
     <releaseNotes>
-      Upgrade to 7.0 RTM
+      Upgrade to 8.0 RTM
     </releaseNotes>
 
     <projectUrl>https://github.com/JasonTaylorDev/RapidBlazor</projectUrl>

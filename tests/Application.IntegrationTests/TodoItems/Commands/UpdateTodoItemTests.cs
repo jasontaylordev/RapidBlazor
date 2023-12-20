@@ -3,10 +3,10 @@ using RapidBlazor.Application.TodoItems.Commands;
 using RapidBlazor.Application.TodoLists.Commands;
 using RapidBlazor.Domain.Entities;
 using RapidBlazor.Domain.Enums;
-using RapidBlazor.WebUI.Shared.TodoItems;
-using RapidBlazor.WebUI.Shared.TodoLists;
+using RapidBlazor.WebUi.Shared.TodoItems;
+using RapidBlazor.WebUi.Shared.TodoLists;
 
-namespace RapidBlazor.Application.SubcutaneousTests.TodoItems.Commands;
+namespace RapidBlazor.Application.IntegrationTests.TodoItems.Commands;
 
 using static Testing;
 

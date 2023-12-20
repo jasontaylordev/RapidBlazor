@@ -1,9 +1,10 @@
-﻿namespace RapidBlazor.Application.TodoLists.Commands;
+using RapidBlazor.Application.Common.Services.Data;
 
-public record DeleteTodoListCommand(int Id) : IRequest;
+namespace RapidBlazor.Application.TodoLists.Commands;
 
-public class DeleteTodoListCommandHandler
-    : AsyncRequestHandler<DeleteTodoListCommand>
+public sealed record DeleteTodoListCommand(int Id) : IRequest<Unit>;
+
+public sealed class DeleteTodoListCommandHandler : IRequestHandler<DeleteTodoListCommand, Unit>
 {
     private readonly IApplicationDbContext _context;
 
@@ -12,7 +13,7 @@ public class DeleteTodoListCommandHandler
         _context = context;
     }
 
-    protected override async Task Handle(DeleteTodoListCommand request,
+    public async Task<Unit> Handle(DeleteTodoListCommand request, 
         CancellationToken cancellationToken)
     {
         var entity = await _context.TodoLists
@@ -24,5 +25,7 @@ public class DeleteTodoListCommandHandler
         _context.TodoLists.Remove(entity);
 
         await _context.SaveChangesAsync(cancellationToken);
+        
+        return Unit.Value;
     }
 }

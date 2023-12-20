@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Immutable;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RapidBlazor.Domain.Common;
 
@@ -8,8 +9,7 @@ public abstract class BaseEntity
 
     private readonly List<BaseEvent> _domainEvents = new();
 
-    [NotMapped]
-    public IReadOnlyCollection<BaseEvent> DomainEvents => _domainEvents.AsReadOnly();
+    [NotMapped] public ImmutableList<BaseEvent> DomainEvents => ImmutableList.Create(_domainEvents.ToArray());
 
     public void AddDomainEvent(BaseEvent domainEvent)
     {

@@ -1,16 +1,16 @@
-﻿using FluentValidation.Results;
+using FluentValidation.Results;
 
 namespace RapidBlazor.Application.Common.Exceptions;
 
 public class ValidationException : Exception
 {
     public ValidationException()
-        : base("One or more validation errors occurred.")
+        : base("One or more validation errors occured.")
     {
         Errors = new Dictionary<string, string[]>();
     }
 
-    public ValidationException(List<ValidationFailure> failures)
+    public ValidationException(IEnumerable<ValidationFailure> failures)
         : this()
     {
         Errors = failures

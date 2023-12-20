@@ -1,5 +1,6 @@
-﻿using RapidBlazor.WebUI.Shared.AccessControl;
-using RapidBlazor.WebUI.Shared.Authorization;
+using RapidBlazor.WebUi.Shared.AccessControl;
+using RapidBlazor.WebUi.Shared.Authorization;
+using RapidBlazor.WebUi.Shared.Common;
 
 namespace RapidBlazor.Application.Common.Services.Identity;
 
@@ -10,7 +11,7 @@ public interface IIdentityService
     Task<Result<string>> CreateUserAsync(
         string userName,
         string password);
-
+    
     Task<Result> DeleteUserAsync(string userId);
 
     Task<IList<RoleDto>> GetRolesAsync(CancellationToken cancellationToken);

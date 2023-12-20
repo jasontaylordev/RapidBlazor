@@ -1,4 +1,5 @@
-﻿using RapidBlazor.WebUI.Shared.WeatherForecasts;
+﻿using Microsoft.Extensions.Logging;
+using RapidBlazor.WebUi.Shared.WeatherForecasts;
 
 namespace RapidBlazor.Application.WeatherForecasts.Queries;
 
@@ -13,7 +14,7 @@ public class GetWeatherForecastsQueryHandler : IRequestHandler<GetWeatherForecas
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
 
-    private readonly ILogger _logger;
+    private readonly ILogger<GetWeatherForecastsQuery> _logger;
 
     public GetWeatherForecastsQueryHandler(ILogger<GetWeatherForecastsQuery> logger)
     {

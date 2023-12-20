@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using RapidBlazor.WebUI.Shared.Authorization;
+using RapidBlazor.WebUi.Shared.Authorization;
 
 namespace RapidBlazor.Infrastructure.Identity;
 

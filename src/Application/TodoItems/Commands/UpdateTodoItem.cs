@@ -1,13 +1,13 @@
-﻿using RapidBlazor.Domain.Enums;
+using RapidBlazor.Application.Common.Services.Data;
+using RapidBlazor.Domain.Enums;
 using RapidBlazor.Domain.Events;
-using RapidBlazor.WebUI.Shared.TodoItems;
+using RapidBlazor.WebUi.Shared.TodoItems;
 
 namespace RapidBlazor.Application.TodoItems.Commands;
 
-public record UpdateTodoItemCommand(UpdateTodoItemRequest Item) : IRequest;
+public sealed record UpdateTodoItemCommand(UpdateTodoItemRequest Item) : IRequest<Unit>;
 
-public class UpdateTodoItemCommandHandler
-        : AsyncRequestHandler<UpdateTodoItemCommand>
+public sealed class UpdateTodoItemCommandHandler : IRequestHandler<UpdateTodoItemCommand, Unit>
 {
     private readonly IApplicationDbContext _context;
 
@@ -16,8 +16,7 @@ public class UpdateTodoItemCommandHandler
         _context = context;
     }
 
-    protected override async Task Handle(UpdateTodoItemCommand request,
-            CancellationToken cancellationToken)
+    public async Task<Unit> Handle(UpdateTodoItemCommand request, CancellationToken cancellationToken)
     {
         var entity = await _context.TodoItems.FirstOrDefaultAsync(
             i => i.Id == request.Item.Id, cancellationToken);
@@ -36,5 +35,6 @@ public class UpdateTodoItemCommandHandler
         }
 
         await _context.SaveChangesAsync(cancellationToken);
+        return Unit.Value;
     }
 }

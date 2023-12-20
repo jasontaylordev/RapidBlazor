@@ -1,42 +1,31 @@
-﻿using RapidBlazor.Domain.Enums;
-using RapidBlazor.WebUI.Shared.TodoLists;
+using RapidBlazor.Application.Common.Services.Data;
+using RapidBlazor.Domain.Enums;
+using RapidBlazor.WebUi.Shared.Common;
+using RapidBlazor.WebUi.Shared.TodoLists;
 
 namespace RapidBlazor.Application.TodoLists.Queries;
 
-public record GetTodoListsQuery : IRequest<TodosVm>;
+public sealed record GetTodoListsQuery : IRequest<TodosVm>;
 
-public class GetTodoListsQueryHandler
-    : IRequestHandler<GetTodoListsQuery, TodosVm>
+public class GetTodoListQueryHandler : IRequestHandler<GetTodoListsQuery, TodosVm>
 {
     private readonly IApplicationDbContext _context;
-    private readonly IMapper _mapper;
 
-    public GetTodoListsQueryHandler(
-        IApplicationDbContext context,
-        IMapper mapper)
+    public GetTodoListQueryHandler(IApplicationDbContext context)
     {
         _context = context;
-        _mapper = mapper;
     }
 
-    public async Task<TodosVm> Handle(
-        GetTodoListsQuery request,
+    public async Task<TodosVm> Handle(GetTodoListsQuery request, 
         CancellationToken cancellationToken)
     {
         return new TodosVm
         {
-            // TODO: Create an enum helper to build these...
-            PriorityLevels = Enum.GetValues(typeof(PriorityLevel))
-                .Cast<PriorityLevel>()
-                .Select(p => new LookupDto
-                {
-                    Id = (int)p,
-                    Title = p.ToString()
-                })
+            PriorityLevels = PriorityLevelExtensions.GetValues()
+                .Select(p => new LookupDto { Id = (int)p, Title = p.ToStringFast() })
                 .ToList(),
-
             Lists = await _context.TodoLists
-                .ProjectTo<TodoListDto>(_mapper.ConfigurationProvider)
+                .ProjectToDto()
                 .ToListAsync(cancellationToken)
         };
     }

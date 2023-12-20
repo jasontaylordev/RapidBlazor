@@ -1,19 +1,26 @@
-﻿using RapidBlazor.Application.Common.Behaviours;
-using RapidBlazor.WebUI.Shared.TodoLists;
-using System.Reflection;
 
+
+using RapidBlazor.Application.Common.Behaviours;
+using RapidBlazor.Application.TodoItems.Commands;
+using RapidBlazor.WebUi.Shared.TodoLists;
+using FluentValidation;
+using RapidBlazor.Application.TodoLists.Commands;
+
+// ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection;
 
 public static class ConfigureServices
 {
-    public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+    public static IServiceCollection AddApplicationService(this IServiceCollection services)
     {
-        services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
         services.AddValidatorsFromAssemblyContaining<CreateTodoListRequestValidator>();
-        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+        services.AddValidatorsFromAssemblyContaining<CreateTodoListCommandValidator>();
 
-        services.AddMediatR(Assembly.GetExecutingAssembly());
+        services.AddMediatR(configuration =>
+        {
+            configuration.RegisterServicesFromAssemblyContaining<CreateTodoItemCommand>();
+        });
+
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehaviour<,>));
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 

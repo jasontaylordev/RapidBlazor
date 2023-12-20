@@ -1,14 +1,14 @@
-﻿using RapidBlazor.Domain.Common;
+using RapidBlazor.Domain.Common;
 using RapidBlazor.Domain.Entities;
 
 namespace RapidBlazor.Domain.Events;
 
-public class TodoItemCreatedEvent : BaseEvent
+public sealed class TodoItemCreatedEvent : BaseEvent
 {
+    public TodoItem Item { get; }
+
     public TodoItemCreatedEvent(TodoItem item)
     {
         Item = item;
     }
-
-    public TodoItem Item { get; }
 }

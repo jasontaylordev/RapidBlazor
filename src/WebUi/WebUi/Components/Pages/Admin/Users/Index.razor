@@ -1,0 +1,34 @@
+@page "/admin/users"
+@attribute [Authorize(Permissions.ViewUsers | Permissions.ManageUsers)]
+
+<PageTitle>Users</PageTitle>
+
+<h1>Users</h1>
+
+<p>This is a description.</p>
+
+@if (Model == null) return;
+
+<table class="table table-striped table-hover w-75">
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var user in Model.Users)
+    {
+        <tr>
+            <td>@user.UserName</td>
+            <td>@user.Email</td>
+            <td>
+                <FlexibleAuthorizeView Permissions="@Permissions.ManageUsers">
+                    <a href="/admin/users/@user.Id">Edit</a>
+                </FlexibleAuthorizeView>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

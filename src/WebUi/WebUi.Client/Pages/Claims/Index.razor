@@ -1,0 +1,20 @@
+@page "/claims"
+@using RapidBlazor.WebUi.Shared.Authorization
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+
+<PageTitle>Claims</PageTitle>
+
+<h1>Claims</h1>
+
+<p>This component displays available claims.</p>
+
+<AuthorizeView>
+    <ul>
+        @foreach (var claim in context.User.Claims)
+        {
+            <li><b>@claim.Type</b>: @claim.Value</li>
+        }
+    </ul>
+</AuthorizeView>

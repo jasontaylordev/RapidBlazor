@@ -1,12 +1,13 @@
-﻿using RapidBlazor.Application.Common.Services.Identity;
-using RapidBlazor.WebUI.Shared.AccessControl;
-using RapidBlazor.WebUI.Shared.Authorization;
+using RapidBlazor.Application.Common.Services.Identity;
+using RapidBlazor.WebUi.Shared.AccessControl;
+using RapidBlazor.WebUi.Shared.Authorization;
 
 namespace RapidBlazor.Application.AccessControl.Queries;
 
-public record GetAccessControlQuery() : IRequest<AccessControlVm>;
+public sealed record GetAccessControl() : IRequest<AccessControlVm>;
 
-public class GetAccessControlQueryHandler : IRequestHandler<GetAccessControlQuery, AccessControlVm>
+public sealed class GetAccessControlQueryHandler 
+    : IRequestHandler<GetAccessControl, AccessControlVm>
 {
     private readonly IIdentityService _identityService;
 
@@ -15,20 +16,17 @@ public class GetAccessControlQueryHandler : IRequestHandler<GetAccessControlQuer
         _identityService = identityService;
     }
 
-    public async Task<AccessControlVm> Handle(GetAccessControlQuery request, CancellationToken cancellationToken)
+    public async Task<AccessControlVm> Handle(GetAccessControl request, 
+        CancellationToken cancellationToken)
     {
-        var permissions = new List<Permissions>();
-        foreach (var permission in PermissionsProvider.GetAll())
-        {
-            if (permission == Permissions.None) continue;
-
-            permissions.Add(permission);
-        }
+        var permissions = PermissionsProvider.GetAll()
+            .Where(permission => permission != Permissions.None)
+            .ToList();
 
         var roles = await _identityService.GetRolesAsync(cancellationToken);
-
+        
         var result = new AccessControlVm(roles, permissions);
-
+        
         return result;
     }
 }

@@ -1,11 +1,12 @@
-﻿using RapidBlazor.Application.Common.Services.Identity;
-using RapidBlazor.WebUI.Shared.Authorization;
+using RapidBlazor.Application.Common.Services.Identity;
+using RapidBlazor.WebUi.Shared.Authorization;
 
 namespace RapidBlazor.Application.AccessControl.Commands;
 
-public record UpdateAccessControlCommand(string RoleId, Permissions Permissions) : IRequest;
+public sealed record UpdateAccessControlCommand(string RoleId, Permissions Permissions) : IRequest<Unit>;
 
-public class UpdateAccessControlCommandHandler : AsyncRequestHandler<UpdateAccessControlCommand>
+public sealed class UpdateAccessControlCommandHandler 
+    : IRequestHandler<UpdateAccessControlCommand, Unit>
 {
     private readonly IIdentityService _identityService;
 
@@ -14,8 +15,10 @@ public class UpdateAccessControlCommandHandler : AsyncRequestHandler<UpdateAcces
         _identityService = identityService;
     }
 
-    protected override async Task Handle(UpdateAccessControlCommand request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(UpdateAccessControlCommand request, 
+        CancellationToken cancellationToken)
     {
         await _identityService.UpdateRolePermissionsAsync(request.RoleId, request.Permissions);
+        return new Unit();
     }
 }

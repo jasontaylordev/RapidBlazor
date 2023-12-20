@@ -1,9 +1,9 @@
-﻿using RapidBlazor.Domain.Common;
+using RapidBlazor.Domain.Common;
 using RapidBlazor.Domain.Enums;
 
 namespace RapidBlazor.Domain.Entities;
 
-public class TodoItem : BaseAuditableEntity
+public sealed class TodoItem : BaseAuditableEntity
 {
     public int ListId { get; set; }
 

@@ -9,7 +9,7 @@ using RapidBlazor.Infrastructure.Identity;
 using Respawn;
 using Respawn.Graph;
 
-namespace RapidBlazor.Application.SubcutaneousTests;
+namespace RapidBlazor.Application.IntegrationTests;
 
 [SetUpFixture]
 public partial class Testing
